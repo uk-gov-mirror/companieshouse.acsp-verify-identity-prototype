@@ -1,0 +1,74 @@
+{% extends "layouts/layout-account-signout-your-companies-jill.html" %}
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your companies
+{% endblock %}
+
+{% set serviceName %}
+ 
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
+          <h1 class="govuk-heading-l">Check the details before we send the email</h1> 
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  text: "Name"
+                },
+                value: {
+                  text: "Kate Williams"
+                }
+              },
+              {
+                key: {
+                  text: "Email address"
+                },
+                value: {
+                  text: "k.williams@example.com"
+                }
+              },
+              {
+                key: {
+                  text: "Role"
+                },
+                value: {
+                  html: "<strong class='govuk-tag govuk-tag--turquoise'>Standard user</strong>"
+                }
+              },
+              {
+                key: {
+                  text: "Services they can access"
+                },
+                value: {
+                  html: "file on behalf of clients <br> verify someone’s identity"
+                }
+              }
+            ]
+          }) }}
+
+            {{ govukButton({
+              text: "Continue and send email",
+              href:"account-added-acsp-member"
+            }) }}
+          
+            <p class="govuk-body"> <a class="govuk-link" href="account-add-acsp-members">Change details</a> </p>
+
+        
+          
+
+          
+
+</div>
+</div>
+
+
+{% endblock %}

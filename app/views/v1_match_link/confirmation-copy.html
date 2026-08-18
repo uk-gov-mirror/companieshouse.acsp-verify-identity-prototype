@@ -1,0 +1,291 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Application complete – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+
+
+}) }}
+
+<div class="govuk-width-container">
+
+  <nav class="govuk-language-select" aria-label="Choose a language">
+        <ul class="govuk-language-select__list">
+          <li class="govuk-language-select__list-item">
+            <span aria-current="true">English</span>
+          </li>
+          <li class="govuk-language-select__list-item">
+            <a href="#lang-cy" hreflang="cy" lang="cy" rel="alternate" class="govuk-link" data-journey-click="link - click:lang-select:Cymraeg"><span class="govuk-visually-hidden">Newid yr iaith ir Gymraeg</span><span aria-hidden="true">Cymraeg</span></a>
+          </li>
+        </ul>
+      </nav>
+</div>
+
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="confirmation" method="post">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Identity verified successfully</h1>
+       <!-- <div class="govuk-panel__body">
+          Your reference number<br><strong>HDJ2123F</strong>
+        </div> -->
+      </div>
+
+      <p>
+        Your reference is HDJ2123F. This is not the Companies House personal code for the person you have verified.</p>
+
+        <h2 class="govuk-heading-m">Print or save the verification details</h2>
+
+      <p>We will not include the verification details you've submitted on the confirmation email. 
+      </p>
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          To keep a record of what you've submitted, you need to print or save the details on this page.        </strong>
+      </div>
+      
+      <button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-2" data-module="govuk-button" >
+        Print identity verification details 
+      </button>
+
+      <h2 class="govuk-!-padding-top-5 govuk-heading-m">What happens next</h2>
+      <p>We've emailed <strong>director@email.com</strong> to let them know you've verified their identity. Their Companies House personal code is included in the email. This may be needed to make a filing with Companies House for this person.</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+      <h2 class="govuk-heading-m">Identity verification details for {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}</h2>
+
+      
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+          </dd>
+          
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Can we use this name in the identity verification statement for this person? 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What name can we use for the identity verification statement? 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['firstNameRegister']}} {{data['middleNameRegister']}} {{data['lastNameRegister']}}
+          </dd>
+        
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['email']}} 
+          </dd>
+
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['dob-day']}}   {{data['dob-month']}}  {{data['dob-year']}} 
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            7 Wentloog Road<br>Rumney<br> Cardiff<br> Wales<br> CF3 3EA
+            
+          </dd>
+
+        </div>
+
+      
+       <!--  <h2 class="govuk-heading-m">Details about the identity checks</h2>
+ -->
+
+  
+  
+      <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date identity checks were completed
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['checked-day']}}   {{data['checked-month']}}  {{data['checked-year']}} 
+            </dd>
+            
+          </div>
+  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How the identity documents were checked
+            </dt>
+            <dd class="govuk-summary-list__value">
+  
+  
+  
+              <!-- person -->
+              The documents were checked by a person
+  
+              <!-- used technology: Option 1 - the documents were checked using identity document validation technology (IDVT) -->
+  
+            </dd>
+            
+          </div>
+  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Identity verification statement
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <p>I confirm that JAMES ACCOUNTING LTD verified the identity of  {% if ((data['registerName'] === "doc")) %}
+
+                {{data['firstName']}} {{data['middleName']}} {{data['lastName']}} 
+
+                      {% else %}
+
+                      {{data['firstNameRegister']}} {{data['middleNameRegister']}} {{data['lastNameRegister']}}
+                
+                       
+                      {% endif %}
+                 to the standard set by Companies House and is satisfied that the required personal information is true. The verification checks were completed {{data['checked-day']}}   {{data['checked-month']}}  {{data['checked-year']}}.</p> 
+              <p>JAMES ACCOUNTING LTD is supervised by Association of Chartered Certified Accountants.</p>
+  
+           <!--  <p>The person provided the following documents to prove their identity:</p>
+  
+              <ul class="govuk-list govuk-list--bullet">
+                      <li>passport</li>
+                      <li>photo driving licence</li>
+                      <li>bank or building society statement</li>
+                    </ul>--> 
+  
+            
+            </dd>
+          </div>
+      
+
+     <!--  <h2 class="govuk-heading-m">Passport details</h2>
+
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+ -->
+
+    <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Passport number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            55241683 
+          </dd>
+          
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Passport expiry date
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          1 November 2030
+
+          </dd>
+          
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Passport country of issue
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>United Kingdom</p>
+          
+          </dd>
+         
+        </div>
+    
+        </dl>
+
+         <h2 class="govuk-heading-m">What did you think of this service?</h2> 
+        <p class="govuk-body">
+          This is a new service. To help us improve it, <a href="#" class="govuk-link">complete our quick survey (opens in a new tab)</a>.
+        </p>
+
+        <h2 class="govuk-heading-m govuk-!-padding-top-4">What do you want to do next?</h2>
+
+        <p class="govuk-body">
+           <a href="#" class="govuk-link">Tell Companies House about another identity you have verified</a>
+        </p>
+  
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">View authorised agent account</a>
+        </p>
+
+
+
+        <ul class="govuk-list govuk-body-xs govuk-!-padding-top-9">
+          <li>
+          <a href="email-confirmation-to-ACSP" class="govuk-link"> Agent email</a>
+          </li>
+          <li>
+          <a href="email-confirmation-to-individual" class="govuk-link">Client email</a></li>
+
+
+          <li>
+          <a href="https://acsp-verify-identity-prototype.herokuapp.com/v9/chs-annotation-people" class="govuk-link">The register</a>
+        </li>
+        </p>
+
+
+
+
+
+  
+
+</form>
+    </div>
+  </div>
+
+{% endblock %}

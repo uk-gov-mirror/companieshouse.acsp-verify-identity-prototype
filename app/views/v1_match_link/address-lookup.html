@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="address-lookup" method="post">
+
+        <span class="govuk-caption-l">
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+        </span>     
+
+
+
+     {% call govukFieldset({
+          legend: {
+            text: "What is their home address?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          },
+            hint: {
+    text: "Select all that apply."
+  } 
+
+
+        }) %}
+
+
+        {{ govukInput({
+          label: {
+            text: "UK postcode"
+          },
+        hint: {
+          text: "You'll need to enter the address manually if it's not in the UK."
+        },
+          id: "postcode",
+          classes: "govuk-input--width-10",
+          name: "postcode"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Property name or number"
+          },
+          hint: {
+            text: "For example, 'The Mill', '116' or 'Flat 37a'"
+          },
+          id: "house-number",
+          classes: "govuk-input--width-10",
+          name: "house-number"
+        }) }}
+        {{ govukButton({
+          text: "Find address"
+        }) }}
+        <p class="govuk-body">
+          <a href="address-manual" class="govuk-link govuk-link--no-visited-state">Enter address manually</a>
+        </p>
+        
+        {% endcall %}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

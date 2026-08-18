@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You need to provide a different email address – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="personal-code" method="post">
+
+
+
+        <h1 class="govuk-heading-l">You need to provide a different email address</h1>
+
+       
+
+  
+      
+
+  
+        <p>You cannot use <strong>example@emailaddress.com</strong>. </p>
+
+       <p> This could be for one of the following reasons: </p>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>an authorised agent already provided this email address when they verified someone’s identity</li>
+        <li>someone has used this email address to verify their identity using GOV.UK One Login</li>
+        </ul>
+
+
+
+        <p class="govuk-body">You'll need to <a href="email-address">provide a different email address for
+
+          {% if (data['firstName'] == "") and (data['lastName'] == "") %}
+
+           Hannah Salt{% else %}
+  
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}{% endif %}</a>.</p>
+
+          
+          
+
+      
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+           <h1 class="govuk-heading-l">
+                         How were the identity documents checked?
+
+        </h1>
+  <!--      <p class="govuk-body">
+         You must have followed the identity checking process in <a href="#" class="govuk-link">Companies House identity verification standard</a> to verify {% if (data['firstName'] == "") and (data['lastName'] == "") %}
+Hannah Salt{% else %}{{data['firstName']}} {{data['middleName']}} {{data['lastName']}}{% endif %}'s identity.     
+        </p> -->
+
+
+
+
+
+<!--
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    If you have not met our identity verification standard, we could suspend or stop your business from acting as an authorised agent. 
+  </strong>
+</div> -->
+<!--
+
+                <p class="govuk-body">You'll need to tell us:</p>
+
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>how the identity documents were checked</li>
+  <li>which documents were checked</li>
+  <li>the document reference number, expiry date and country of issue (for documents that have them)</li>
+  </ul>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      If you used a commercial identity provider or platform
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  <p>You must check how they verified the person's identity to the required standard.</p><p> You will also need to keep copies of the documents the person used to prove their identity. You'll need to keep these for 7 years from the date the identity checks were completed.</p>
+  </div>
+</details> -->
+
+
+
+      <form class="form" action="format-of-the-documents-checked" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="security-check" name="security-check" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="security-check">
+                    Using technology to validate the cryptographic features of the document
+                  </label>
+                        <div class="govuk-hint govuk-radios__hint">
+                          Cryptographic features are security features that identify the person or organisation that issued the document.
+        </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="security-check" name="security-check" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="security-check-2">
+                    By a person
+                  </label>
+                      <div class="govuk-hint govuk-radios__hint">
+                  
+
+        </div> 
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                The documents were checked another way
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>You must use one of the 2 options for checking identity documents from the <a href="guidance" rel="noreferrer noopener" target="_blank"><span class="govuk-visually-hidden">Companies House</span>identity verification standard (opens in a new tab)</a> to verify someone for Companies House.</p>
+<p>If you used a commercial identity verification provider or platform to complete the checks for you, you must find out how they checked the person's documents. </p>
+
+            </div>
+          </details>
+        
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

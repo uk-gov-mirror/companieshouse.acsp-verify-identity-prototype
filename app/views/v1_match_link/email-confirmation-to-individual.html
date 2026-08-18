@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Register an ACSP: application approved
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+
+
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+   
+      <p>Email subject line: <strong>Your identity has been verified for Companies House</strong></p>
+
+      <p>MORRIS ACCOUNTING LTD has told Companies House they have verified your identity.</p>
+      
+      <!--<p class="govuk-body">MORRIS ACCOUNTING LTD has verified your identity for Companies House.</p> -->
+
+   <div class="highlight-box"> 
+   <!--  <div class="govuk-inset-text">-->
+
+      <h1 class="govuk-heading-m">Your details</h1>
+      <p class="govuk-body">Your name: Laura Williams</p>
+      <p class="govuk-body">Your Companies House personal code: <strong>2F3P8MZ6</strong></p>
+
+      <p class="govuk-body">Keep your code safe. Only share it with people you trust to file on your behalf.</p>
+
+
+  </div> 
+
+<p>You can use your Companies House personal code to connect your verified identity to our records. </p>
+<!--<p>This is so that we know the correct person is linked to the personal details we have on file.</p>-->
+
+
+
+    <!--  <p class="govuk-body">Keep your personal code secure, as you would with other unique codes such as your Unique Taxpayer Reference (UTR) for HMRC. Only share the code with people you trust to file on your behalf.</p> -->
+
+
+        <h2 class="govuk-heading-m">What to do next</h2>
+    
+<!-- Version 1 - sounds like it's mandatory -->
+<p>Connect your verified identity to a Companies House account. </p>
+<!--<p>If you connect your verified identity to a Companies House account, you can access your personal code whenever you need it. -->
+
+
+    <div class="govuk-inset-text">
+  <p>Sign in or create sign in details using <strong>email@example.com</strong> to connect your verified identity: <a href="#/">https://identity.company-information.service.gov.uk/identity-verification/has-identity-been-verified</a></p>
+      <p>To confirm your details, you'll need to enter your:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Companies House personal code</li>
+    <li>date of birth</li>
+    </ul>
+</div>
+
+
+  </p>
+        <h2 class="govuk-heading-m">If you think there has been a mistake</h2>
+
+  <p>Contact us as soon as possible.
+
+  <p><strong>Email:</strong> enquiries@companieshouse.gov.uk</p>
+
+  <p><strong>Telephone:</strong> 0303 1234 500</p>
+  <p>
+   Monday to Friday, 8:30am to 6pm<br>
+  Find out about call charges: <a href="https://www.gov.uk/call-charges" class="govuk-link">https://www.gov.uk/call-charges</a></p>
+  <p>
+  This email was send from an email address which cannot accept incoming mail. Do not reply directly to this message. </p>
+
+
+<!--
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">What a Companies House personal code is</h2>
+
+
+      <p class="govuk-body">Your Companies House personal code connects your verified identity to our records. This is so that we know the correct person is linked to the personal details we have on file.</p> -->
+
+    <!--  <h2 class="govuk-heading-m">When you may need your Companies House personal code</h2> -->
+
+    <!--  <p class="govuk-body">You may need it: </p>
+
+<ul class="govuk-list govuk-list--bullet">
+      <li>as part of some other company filings</li>
+      <li>if you are appointed as a director</li>
+      <li>if you become a person with significant control (PSC)</li>
+  </ul> -->
+
+    </div>
+    </div>
+
+
+  </div>
+</div>
+{% endblock %}

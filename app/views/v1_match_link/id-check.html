@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="id-check" method="post">
+
+
+       <span class="govuk-caption-l">
+           {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+       </span>
+      <h1 class="govuk-heading-l">Confirm you have verified this person's identity</h1>
+
+
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    We could suspend or stop JAMES ACCOUNTING LTD from acting as an Authorised Corporate Service Provider (ACSP) if you have not met our identity verification standard. 
+  </strong>
+</div>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="id-check-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Identity verification statement
+            </legend>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="id-check" name="waid-checkste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="id-check">
+                <!--  <p class="govuk-body">I confirm that JAMES ACCOUNTING LTD has carried out identity verification checks for this person on <span class="govuk-!-font-weight-bold"> {{data['checked-day']}} {{data['checked-month']}} {{data['checked-year']}}</span> that meet Companies House identity verification standard. -->
+
+
+                  <p class="govuk-body">I confirm that JAMES ACCOUNTING LTD verified the identity of 
+                    
+
+                    {% if ((data['registerName'] === "doc")) %}
+
+                    {{data['firstName']}} {{data['middleName']}} {{data['lastName']}} 
+
+                          {% else %}
+
+                          Laura Smith
+                    
+                           
+                          {% endif %}
+                    
+                    
+                    
+                    to the standard set by Companies House and is satisfied that the required personal information is true. The verification checks were completed on {{data['checked-day']}} {{data['checked-month']}} {{data['checked-year']}}.</p>
+                  <p class="govuk-body">JAMES ACCOUNTING LTD is supervised by Association of Chartered Certified Accountants.</p>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+
+        <div class="govuk-inset-text">
+          <h2 class="govuk-heading-m">What information we'll show on the public register</h2>
+                    <p>We will show this statement if this person uses their personal code to connect their verified identity to our records. </p>
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

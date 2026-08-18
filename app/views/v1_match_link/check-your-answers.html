@@ -1,0 +1,361 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check your answers before sending your application – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <form class="form" action="check-your-answers" method="post">
+
+      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+
+
+
+    <!-- <h2 class="govuk-heading-m">Important verification details</h2> -->
+
+
+
+
+
+
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-visually-hidden">Warning</span>
+      {{data['firstName']}} {{data['middleName']}} {{data['lastName']}} will not be able to connect their verified identity to the information we hold if you've entered their email address or date of birth incorrectly. 
+    </strong>
+  </div>
+
+
+      <h2 class="govuk-heading-m">{{data['firstName']}} {{data['middleName']}} {{data['lastName']}}'s details</h2>
+
+      
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['email']}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+  
+  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            20 June 1980
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Can we use this name in the identity verification statement for this person? 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            What name can we use for the identity verification statement? 
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['firstNameRegister']}} {{data['middleNameRegister']}} {{data['lastNameRegister']}}
+                    
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            7 Wentloog Road<br>Rumney<br> Cardiff<br> Wales<br> CF3 3EA
+            
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> Home address</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+
+
+
+
+
+      <h2 class="govuk-heading-m">Identity check details</h2>
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+    <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date identity checks were completed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['checked-day']}}   {{data['checked-month']}}  {{data['checked-year']}} 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            How the identity documents were checked
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+
+
+            <!-- person -->
+            The documents were checked by a person
+
+            <!-- used technology: Option 1 - the documents were checked using identity document validation technology (IDVT) -->
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Identity documents that were checked
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Passport</li> 
+              <li>Bank or building society statement</li>
+            </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+         
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Identity verification statement
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>I confirm that JAMES ACCOUNTING LTD verified the identity of  {% if ((data['registerName'] === "doc")) %}
+
+              {{data['firstName']}} {{data['middleName']}} {{data['lastName']}} 
+
+                    {% else %}
+
+                    {{data['firstNameRegister']}} {{data['middleNameRegister']}} {{data['lastNameRegister']}}
+              
+                     
+                    {% endif %}
+               to the standard set by Companies House and is satisfied that the required personal information is true. The verification checks were completed {{data['checked-day']}}   {{data['checked-month']}}  {{data['checked-year']}}.</p> 
+            <p>JAMES ACCOUNTING LTD is supervised by Association of Chartered Certified Accountants.</p>
+
+         <!--  <p>The person provided the following documents to prove their identity:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                    <li>passport</li>
+                    <li>photo driving licence</li>
+                    <li>bank or building society statement</li>
+                  </ul>--> 
+
+          
+          </dd>
+          <!-- <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd> -->
+        </div>
+    
+        </dl>
+
+
+      <h2 class="govuk-heading-m">Passport details</h2>
+
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+    <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Passport number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            55241683 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> passport number</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Expiry date
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+
+          1 November 2030
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> passport expiry date</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country of issue
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>United Kingdom</p>
+          
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden">country of issue</span>
+            </a>
+          </dd>
+        </div>
+    
+        </dl>
+
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+       <!--    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+             Declaration
+            </h2>
+          </legend> -->
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+               I confirm that JAMES ACCOUNTING LTD has delivered the date of birth and required contact information for {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}, and a description of the information and evidence used to satisfy that the required personal information is true.
+
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!-- <p class="govuk-body"><a href="/verify-using-an-acsp/name" class="govuk-link">Add another person whose identity you’ve verified </a></p> -->
+
+   <!--   {{ govukInsetText({
+        text: 'We will not show any information you provide on the public register.'
+      }) }}-->
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm and send"
+        }) }}
+      
+      <!--  {{ govukButton({
+          text: "Add another person",
+          classes: "govuk-button--secondary",
+          href:"name"
+        }) }} -->
+      </div>
+
+  
+
+
+
+     
+
+    </div>
+  </div>
+{% endblock %}

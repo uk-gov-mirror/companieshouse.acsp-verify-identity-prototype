@@ -1,0 +1,262 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="documents-checked-r2" method="post">
+
+        <span class="govuk-caption-l">
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+        </span> 
+      
+
+        <h1 class="govuk-heading-l">Which documents did you check to verify their identity?</h1>
+                  <p class="govuk-hint">Select at least 2 documents. At least 1 of the documents must be from group A.  
+                  </p>
+
+
+  <!-- Is an irish passport card crypographic? -->
+
+
+        
+
+
+          {{ govukCheckboxes({
+            name: "group-a",
+            fieldset: {
+              legend: {
+                text: "Group A",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+
+            items: [
+              {
+                value: "passport",
+                text: "Passport",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Irish passport card",
+                hint: {
+                  text: ""
+                }
+              },
+
+              {
+                value: "",
+                text: "Identity card with biometric information from the EU, Norway, Iceland or Liechtenstein",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK biometric residence permit (BRP)",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK biometric residence card (BRC)",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK accredited PASS card ",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK or EU driver digital tachograph card",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK, Channel Islands, Isle of Man and EU photocard driving licence (full or provisional)",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK HM Forces ID Card",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK HM Armed Forces Veteran Card",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK Frontier Worker permit",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Photographic work permit (government issued)",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Photographic immigration document",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Photographic Visa",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK, Channel Islands and Isle of Man Firearms Licence",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Photographic ID listed on PRADO",
+                hint: {
+                  text: "Such as a National Identity Card (Pakistan), crew member certificate (South Africa), or Permanent Resident Card (USA)."
+                }
+              }
+ 
+            ]
+          }) }}
+
+
+          {{ govukCheckboxes({
+            name: "documents",
+            fieldset: {
+              legend: {
+                text: "Group B",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+
+            items: [
+              
+              {
+                value: "cry-passport",
+                text: "Birth or adoption certificate",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Marriage or civil partnership certificate",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Non-photographic immigration document",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Non-photographic visa",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Non-photographic work permit",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Bank or building society statement",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK local authority or social housing rental agreement (for the person’s current address)",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Mortgage statement (for the person’s current address)",
+                hint: {
+                  text: ""
+                }
+              },
+             
+              {
+                value: "",
+                text: "UK council tax statement (for the person’s current address)",
+                hint: {
+                  text: ""
+                }
+              },
+                            {
+                value: "",
+                text: "Utility bill (for the person’s current address)",
+                hint: {
+                  text: ""
+                }
+              }
+ 
+            ]
+          }) }}
+
+
+
+
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

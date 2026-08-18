@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check and confirm their date of birth – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds-from-desktop">
+            <form class="form" action="dob" method="post">
+
+              
+
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <span class="govuk-caption-l">
+                      {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+                    </span>
+                    
+                    <h1 class="govuk-heading-l">Check and confirm their date of birth</h1>
+
+                    
+                  </legend>
+
+                  <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                      <span class="govuk-visually-hidden">Warning</span>
+                      Entering an incorrect date of birth could later cause filings to be rejected. </strong>
+                  </div>
+                 
+                  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
+                      <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                        I can confirm  {{data['firstName']}} {{data['middleName']}} {{data['lastName']}} date of birth is <span class="govuk-!-font-weight-bold">  {{data['dob-day']}} {{data['dob-month']}} {{data['dob-year']}}</span>.
+                      </label>
+                 
+                  </div>
+                </fieldset>
+              </div>
+
+
+              <p class="govuk-body">
+                <a href="#" class="govuk-link">I need to correct their date of birth</a>
+              </p>
+  
+
+
+
+    
+
+
+ 
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

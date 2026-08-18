@@ -1,0 +1,185 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'We\'re testing a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="start-page" method="post">
+
+      <h1 class="govuk-heading-l">
+        Tell Companies House you have verified someone’s identity  
+      </h1>
+
+
+
+      <p class="govuk-body">Use this service to tell us when you've verified someone's identity for Companies House.</p>
+
+      <p>When you tell us you've verified someone, we'll send their Companies House personal code to the email address you provide for them. This code can be used each time the person needs to confirm they're verified.</p> 
+      <p>To find out more, read the <a href="">guidance about Companies House personal codes</a>.</p>
+
+
+
+      <h2 class="govuk-heading-m">What you need to do to verify someone’s identity</h2>  
+
+
+      <p>Our identity verification standard lists the documents you can use and the checks you need to complete to verify someone’s identity for Companies House.   </p>
+
+     
+      <p>You do not need to upload copies of the person's documents when you tell us you've verified them. However, you must keep records of the identity checks you completed, including copies of the documents.</p>
+      <div class="govuk-inset-text">To find out more, <a href="">read our guidance on how to meet the identity verification standard</a>. </div>
+
+
+      <div class="govuk-warning-text">
+       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+       <strong class="govuk-warning-text__text">
+         <span class="govuk-visually-hidden">Warning</span>
+         We could suspend or stop your business from acting as an Authorised Corporate Service Provider (ACSP) if you have not met our identity verification standard. 
+       </strong>
+     </div>
+     
+           
+     <h2 class="govuk-heading-m">What you'll need to tell us</h2>  
+
+     <p>You’ll need to tell us the person’s: </p>
+
+
+     <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+      <li>full name</li>
+      <li>date of birth</li>
+      <li>home address</li>
+      <li>email address - the email address you give can only be used once to verify someone’s identity
+      </li>
+    </ul>
+
+    <p>You’ll also need to tell us: </p>
+
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+      <li>if the documents were checked by a person, or using technology to validate the cryptographic features of the document</li>
+      <li>which documents the person provided</li>
+      <li>a document reference, expiry date and country of issue (for the documents that have them)</li>
+      <li>the date you completed the identity checks</li>
+    </ul>
+
+
+      <!--!!! OPT 1
+
+      <h2 class="govuk-heading-m">What you'll need</h2>  
+
+
+
+ <p>You need to verify the person's identity before you use this service. The checks you complete to verify a person's identity must meet our <a href="">identity verification standard</a>.</p>
+
+ <p>You must keep records of the identity checks you complete, including copies of the documents. We may ask to see these records.</p>
+
+ <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    We could suspend or stop your business from acting as an Authorised Corporate Service Provider (ACSP) if you have not met our identity verification standard. 
+  </strong>
+</div>
+
+      
+     <h3 class="govuk-heading-s">Details about the person</h3>
+     <p>You'll need to tell us the person's details exactly as they appear on the documents you checked. You’ll need to tell us their: </p>
+
+     <ul class="govuk-list govuk-list--bullet">
+      <li>full name</li>
+      <li>date of birth</li>
+      <li>home address</li>
+      <li>email address - the email address you give can only be used once to verify someone’s identity
+      </li>
+    </ul>
+
+
+    <h3 class="govuk-heading-s">Details about the identity checks</h3>
+
+
+    <p>You'll need to tell us: </p>
+    <ul class="govuk-list govuk-list--bullet">
+     <li>if the documents were checked by a person, or using technology to validate the cryptographic features of the document</li>
+     <li>which documents the person provided</li>
+     <li>the date you completed the identity checks</li>
+   </ul>
+
+
+    <h3 class="govuk-heading-s">Tell us about the person's documents</h3>
+
+    <p>You do not need to upload copies of the documents you checked. However, for most documents, you'll need to provide some information from the document itself. </p>
+    
+    <p>For the documents that have them, you'll need to provide the: </p> 
+    
+                     <ul class="govuk-list govuk-list--bullet">
+                      <li>document reference – for example, you’ll need to give the passport number if you checked their passport</li>
+                      <li>expiry date, if the document has one</li>
+                      <li>country of issue, if the document has one</li>
+                    </ul>
+!!!END OF OPT 1 --> 
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+       
+
+<p>It takes around 10 minutes to use this service.</p>
+
+
+
+
+
+
+      {{ govukButton({
+        text: "Start now",
+        isStartButton: true
+      }) }}
+
+
+
+ <h2 class="govuk-heading-m">What we’ll show on the public register </h2>  
+
+<p>
+When you verify someone’s identity, we'll ask you to confirm an identity verification statement to say you are satisfied the person is who they claim to be. </p>
+
+<p>If the person connects their verified identity to their Companies House record as a director or person with significant control (PSC), we’ll show the statement on the public register to confirm they are verified.</p>
+
+<p>Read the <a href="guidance-ACSPs">guidance about verifying someone's identity for Companies House</a> to find out what information the statement will include.</p>
+
+
+
+    </div>
+
+
+
+  </form>
+  </div>
+{% endblock %}

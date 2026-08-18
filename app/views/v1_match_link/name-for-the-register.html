@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the director's name? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="name-for-the-register" method="post">
+
+      
+      
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">What name can we use for the identity verification statement?</h1>
+  <!--<div id="event-name-hint" class="govuk-hint">This should be the name they're usually known by.</div> -->
+
+        <div class="govuk-form-group">
+
+          {{ govukInput({
+            label: {
+              text: "First name"
+            },
+            hint: {
+              text: ""
+            },
+            classes: "govuk-input--width-20",
+            id: "firstNameRegister",
+            name: "firstNameRegister"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Middle name or names"
+            },
+            hint: {
+              text: ""
+            },
+            classes: "govuk-input--width-20",
+            id: "middleNameRegister",
+            name: "middleName"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Last name"
+            },
+            classes: "govuk-input--width-20",
+            id: "lastNameRegister",
+            name: "lastName"
+          }) }}
+        </div>
+
+        <div class="govuk-inset-text">
+
+          <!-- <h2 class="govuk-heading-s">
+            What will appear on the public register
+          </h2> -->
+         
+
+     <!--     <h2 class="govuk-heading-m">What information we'll show on the public register</h2> -->
+
+
+            <p class="govuk-body">We'll include this name in the statement, which will be shown on the Companies House public register if this person connects their verified identity to our records.  </p>
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      <!--   <p class="govuk-body">
+         <a href="name-on-register" class="govuk-link">I want to use the name shown on the identity documents  </a>
+        </p> -->
+
+
+ 
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

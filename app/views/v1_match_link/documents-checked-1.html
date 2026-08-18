@@ -1,0 +1,285 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="documents-checked-1" method="post">
+
+        <span class="govuk-caption-l">
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+        </span> 
+      
+
+        <h1 class="govuk-heading-l">Which documents did you check to verify their identity?</h1>
+
+
+  <!-- Is an irish passport card crypographic? -->
+
+
+          {{ govukCheckboxes({
+            name: "documents",
+            fieldset: {
+              legend: {
+                text: "Cryptographic documents",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+
+            items: [
+              
+              {
+                value: "cry-passport",
+                text: "Biometric or Machine-Readable Passport or Irish Passport Card",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK, Channel Islands, Isle of Man and EU photocard driving licence",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "EU or EEA identity card, with biometric information",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK biometric residence permit (BRP)",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK biometric residence card (BRC)",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK Frontier Worker Permit",
+                hint: {
+                  text: ""
+                }
+              }
+ 
+            ]
+          }) }}
+
+
+
+
+          {{ govukCheckboxes({
+            name: "group-a",
+            fieldset: {
+              legend: {
+                text: "Group A",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+
+            items: [
+              {
+                value: "passport",
+                text: "Passport or Irish Passport Card",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "EU or EEA identity card",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK biometric residence permit",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK biometric residence card",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK, Channel Islands, Isle of Man and EU photocard driving licence",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK HM Forces ID Card",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK HM Armed Forces Veteran Card",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK Frontier Worker Permit",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Photographic Work Permit (government issued)",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Photographic Immigration Document",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Photographic Visa",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK, Channel Islands and Isle of Man Firearms Licence",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Photographic ID listed on PRADO",
+                hint: {
+                  text: "Such as Director Identification Number (India), National Identity Card (Pakistan), Driving Licence (Philippines), Driving Licence (Nigeria), Crew Member Certificate, South Africa."
+                }
+              },
+             
+              {
+                divider: "or"
+              },
+              {
+                value: "none",
+                text: "None of these",
+                behaviour: "exclusive"
+              }
+ 
+            ]
+          }) }}
+
+
+          {{ govukCheckboxes({
+            name: "documents",
+            fieldset: {
+              legend: {
+                text: "Group B",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+
+            items: [
+              
+              {
+                value: "cry-passport",
+                text: "Birth or Adoption Certificate",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Marriage or Civil Partnership Certificate",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Immigration Document, Visa or Work Permit",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Bank or Building Society Statement",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK Local Authority or Social Housing Rental Agreement",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Mortgage Statement",
+                hint: {
+                  text: ""
+                }
+              },
+             
+              {
+                divider: "or"
+              },
+              {
+                value: "none",
+                text: "None of these",
+                behaviour: "exclusive"
+              }
+ 
+            ]
+          }) }}
+
+
+
+
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

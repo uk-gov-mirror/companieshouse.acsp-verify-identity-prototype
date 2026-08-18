@@ -1,0 +1,171 @@
+{% extends "layouts/layout-chs-signed-out.html" %}
+
+{% block pageTitle %}
+  Manage account - Companies House - GOV.UK
+{% endblock %}
+
+{% set serviceName %}
+ 
+{% endset %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Note: GOV.UK One Login uses Security as the title for this page -->
+    <h1 class="govuk-heading-xl">
+      Authorised agent
+    </h1>
+   <!--   <p class="govuk-body  govuk-!-padding-top-4 govuk-!-padding-bottom-4"> Morris Accounting LTD</span> </p>
+
+
+   <p class="govuk-body">You can change your sign in details for this service in your GOV.UK One Login.</p>
+    
+    <p class="govuk-body"> You'll be able to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>change your email address</li>
+      <li>change your password</li>
+      <li>change how you get security codes to sign in</li>
+      <li>delete your GOV.UK One Login</li>
+    </ul>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Go to your GOV.UK One Login to change your sign in details (opens in a new tab) </a>
+    </p> -->
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Identity verification {{ govukTag({
+          text: "Content TBC",
+          classes: "govuk-tag--pink"
+        }) }} </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+
+            <p class="govuk-body">
+               <a href="#" class="govuk-link">Tell Companies House you have verified someone's identity</a>
+            </p>
+            
+          </div>
+        </dl>
+      </div>
+    </div>
+
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Your details {{ govukTag({
+          text: "Content TBC",
+          classes: "govuk-tag--pink"
+        }) }}</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <p class="govuk-body">You can change your sign in details for this service in your GOV.UK One Login.</p>
+    
+        <p class="govuk-body"> You'll be able to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>change your email address</li>
+          <li>change your password</li>
+          <li>change how you get security codes to sign in</li>
+          <li>delete your GOV.UK One Login</li>
+        </ul>
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Go to your GOV.UK One Login to change your sign in details (opens in a new tab) </a>
+        </p>
+    
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Identity verification</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+              View history<span class="govuk-visually-hidden"> of personal code</span>
+            </a>
+          </li>
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+              Create new code<span class="govuk-visually-hidden"> Create ne code</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Personal code
+            </dt>
+            <dd class="govuk-summary-list__value">
+              **************
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Show<span class="govuk-visually-hidden"> Show personal code</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    
+    
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Email preferences</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <p class="govuk-body govuk-hint">Some types of email are essential to manage your account. We need to send you essential emails from time to time.</p>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <div class="">
+              <dt class="govuk-summary-list__key">
+                Can we send you emails to tell you about a new message in your account? <p class="govuk-body govuk-hint"> In the future, we'd like to send you emails to let you know you've received a new message in your account</p>
+              </dt>
+            </div>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+             <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> emails to manage account</span>
+              </a>
+            </dd>
+          </div>
+         <!-- <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Can we send you emails to help you with running your company?
+              <p class="govuk-body govuk-hint"> For example, changes to services or legislation, information from other government departments which may be crucial to the running of your company, or invitations to take part in research to help us improve our services.</p>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> change running your company</span>
+              </a>
+            </dd> 
+          </div>-->
+        </dl>
+      </div>
+    </div>
+
+
+
+    <p class="govuk-body govuk-!-margin-top-8 govuk-!-margin-bottom-8"> <a href="#" class="govuk-link govuk-link--no-visited-state">Manage third party applications</a></p>
+
+    {{ govukButton({
+      text: "Go to search for a company",
+      classes: "govuk-button--secondary"
+    }) }}
+
+
+  </div>
+</div>
+
+{% endblock %}

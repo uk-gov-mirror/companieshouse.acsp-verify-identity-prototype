@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="documents-checked-r1" method="post">
+
+        <span class="govuk-caption-l">
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+        </span> 
+      
+
+        <h1 class="govuk-heading-l">Which documents did you check to verify their identity?</h1>
+                  <p class="govuk-hint">Select at least one document.</p>
+
+
+  <!-- Is an irish passport card crypographic? -->
+
+
+          {{ govukCheckboxes({
+            name: "documents",
+            fieldset: {
+              legend: {
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+
+            items: [
+              
+              {
+                value: "cry-passport",
+                text: "Biometric or machine readable passport",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "Irish-passport",
+                text: "Irish passport card",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK, Channel Islands, Isle of Man and EU photocard driving licence (full or provisional)",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "Identity card with biometric information from the EU, Norway, Iceland or Liechtenstein",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK biometric residence permit (BRP)",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK biometric residence card (BRC)",
+                hint: {
+                  text: ""
+                }
+              },
+              {
+                value: "",
+                text: "UK Frontier Worker permit",
+                hint: {
+                  text: ""
+                }
+              }
+ 
+            ]
+          }) }}
+
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

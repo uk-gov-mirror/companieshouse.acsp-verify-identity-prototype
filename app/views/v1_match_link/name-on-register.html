@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the name of your business? – {{ serviceName }} 
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="name-on-register" method="post">
+
+                  <span class="govuk-caption-l">
+                    {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+                  </span>
+<h1 class="govuk-heading-l">What we’ll show on the public register</h1>
+
+            <p>Later in this service, we'll ask you to confirm a statement to say you are satisfied this person is who they claim to be. </p>
+            <p>If they connect their verified identity to their Companies House record as a director or person with significant control (PSC), we’ll show the statement on the public register to confirm they are verified. The statement will include their name.</p>
+            <p>If {{data['firstName']}} {{data['middleName']}} {{data['lastName']}} is usually known by a different name, you can provide this to use for the statement instead. You may want to do this if they use a different name professionally.</p>
+
+            <p>For example, this could be because they have a preferred name that’s different to the one shown on their identity documents. Or if they have changed their name because of marriage but still use their previous name for their work. </p>
+            
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                    Can we use {{data['firstName']}} {{data['middleName']}} {{data['lastName']}} for the identity verification statement? 
+                  </h2>
+                </legend>
+    
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="registerName" name="registerName" type="radio" value="doc">
+                <label class="govuk-label govuk-radios__label" for="registerName">
+                  Yes
+
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="registerName-2" name="registerName" type="radio" value="different">
+                <label class="govuk-label govuk-radios__label" for="registerName-2">
+                  No, I need to provide a different name
+                </label>
+                
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
+
+
+
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

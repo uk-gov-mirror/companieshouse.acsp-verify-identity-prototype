@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm their home address – {{ serviceName }} – GOV.UK
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="address-confirm" method="post">
+
+
+        <span class="govuk-caption-l">
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+        </span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Confirm their home address</h1>
+
+        <ul class="govuk-list">
+          <li>7 Wentloog Road</li>
+          <li>Rumney</li>
+          <li>Cardiff</li>
+          <li>Wales</li>
+          <li>CF3 3EA</li>
+        </ul>
+        <p> <a href="javascript:void(0);">Edit address</a> </p>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

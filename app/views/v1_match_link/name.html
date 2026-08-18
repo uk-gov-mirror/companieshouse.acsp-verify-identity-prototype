@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the director's name? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="name" method="post">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">What is the person's name?</h1>
+            <div class="govuk-hint govuk-!-margin-bottom-6">
+      This must be exactly the same as the name shown on at least one of the identity documents they provided.
+    </div>
+
+        <div class="govuk-form-group">
+
+         <!-- {{ govukInput({
+            label: {
+              text: "Professional or honorary title (if relevant)"
+            },
+            classes: "govuk-input--width-20",
+            id: "title",
+            name: "title"
+          }) }} -->
+
+
+          {{ govukInput({
+            label: {
+              text: "First name"
+            },
+            hint: {
+              text: ""
+            },
+            classes: "govuk-input--width-20",
+            id: "firstName",
+            name: "firstName"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Middle name or names"
+            },
+            hint: {
+              text: ""
+            },
+            classes: "govuk-input--width-20",
+            id: "middleName",
+            name: "middleName"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Last name"
+            },
+            classes: "govuk-input--width-20",
+            id: "lastName",
+            name: "lastName"
+          }) }}
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,93 @@
+{% extends "layouts/layout-account-signout-home.html" %}
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Home - Companies House WebFiling account - GOV.UK
+{% endblock %}
+
+{% set serviceName %}
+ 
+{% endset %}
+
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+  
+    <h1 class="govuk-heading-l">Authorised agent services 
+    <span class="govuk-caption-l" >j.morris@example.com</span> </h1>
+    
+    <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-padding-top-3">
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-3">Manage the members of the Authorised agent</h2>
+
+      {{ govukButton({
+        text: "Add a new person",
+        href:""
+      }) }}
+
+      
+            {{ govukSummaryList({
+              card: {
+                title: {
+                  text: "James Morris"
+                }
+              },
+              rows: [
+              {
+                key: {
+                  text: "Role"
+                },
+                value: {
+                  html: '<strong class="govuk-tag">
+                    Admin
+                  </strong>'
+                },
+                
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "age"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Email address"
+                  },
+                  value: {
+                    html: "james.morris@example.com"
+                  },
+                
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "nationality"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+
+          </div>
+        </div>
+
+</div>
+</div>
+           
+    
+{% endblock %}

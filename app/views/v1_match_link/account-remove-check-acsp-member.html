@@ -1,0 +1,68 @@
+{% extends "layouts/layout-account-signout-your-companies-jill.html" %}
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your companies
+{% endblock %}
+
+
+{% set serviceName %}
+ 
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
+          <h1 class="govuk-heading-l">Check the details before you remove Kate Williams</h1> 
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  text: "Name"
+                },
+                value: {
+                  text: "Kate Williams"
+                }
+              },
+              {
+                key: {
+                  text: "Email address"
+                },
+                value: {
+                  text: "k.williams@example.com"
+                }
+              },
+              {
+                key: {
+                  text: "Role"
+                },
+                value: {
+                  html: "<strong class='govuk-tag govuk-tag--turquoise'>Standard user</strong>"
+                }
+              }
+            ]
+          }) }}
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Remove",
+              classes: "govuk-button--warning",
+              href:"account-acsp-members"
+            }) }}
+          
+            {{ govukButton({
+              text: "Cancel",
+              classes: "govuk-button--secondary"
+            }) }}
+          </div>
+        
+</div>
+</div>
+
+
+{% endblock %}
