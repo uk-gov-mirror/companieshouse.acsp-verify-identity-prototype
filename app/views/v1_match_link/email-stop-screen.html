@@ -13,7 +13,7 @@ You need to provide a different email address – {{ serviceName }} – GOV.UK P
 
 
 
-        <h1 class="govuk-heading-l">You need to provide a different email address</h1>
+        <h1 class="govuk-heading-l">This email is already in use</h1>
 
        
 
@@ -21,7 +21,7 @@ You need to provide a different email address – {{ serviceName }} – GOV.UK P
       
 
   
-        <p>You cannot use <strong>example@emailaddress.com</strong>. </p>
+        <p>We already have an identity record linked to <strong>example@emailaddress.com</strong> which doesn’t match the details you’ve entered for James Morris. </p>
 
        <p> This could be for one of the following reasons: </p>
        <ul class="govuk-list govuk-list--bullet">
@@ -31,11 +31,11 @@ You need to provide a different email address – {{ serviceName }} – GOV.UK P
 
 
 
-        <p class="govuk-body">You'll need to <a href="email-address">provide a different email address for
+        <p class="govuk-body">Check with your client if they have provided the correct email address. You'll need to <a href="email-address">provide a unique email address for
 
           {% if (data['firstName'] == "") and (data['lastName'] == "") %}
 
-           Hannah Salt{% else %}
+           James Morris{% else %}
   
           {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}{% endif %}</a>.</p>
 
