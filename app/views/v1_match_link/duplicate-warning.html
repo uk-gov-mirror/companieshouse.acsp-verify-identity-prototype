@@ -1,72 +1,72 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Confirm their home
+address – {{ serviceName }} – GOV.UK {% endblock %} {% block content %}
 
-{% block pageTitle %}
-Confirm their home address – {{ serviceName }} – GOV.UK
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="address-confirm" method="post">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+        Verification record already exists
+      </h1>
 
+      <p>
+        We already have an identity record which matches the details you’ve
+        entered.
+      </p>
 
+      <p>
+        If you think this is a mistake, check that you have entered all your
+        client’s details correctly.
+      </p>
 
-{% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <form class="form" action="address-confirm" method="post">
-
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">The information provided looks like a duplicated record</h1>
-
-        <p>Some content...</p>
-
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="name">Change<span class="govuk-visually-hidden"> name</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['dobDay']}}  {{ data['dobMonth'] | displayMonth}}  {{data['dobYear']}} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="dob">Change<span class="govuk-visually-hidden"> date of birth</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              72 Guild Street<br>London<br>SE23 6FH
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="address-lookup.html">Change<span class="govuk-visually-hidden"> address</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Email
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['email']}}              
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="email-address">Change<span class="govuk-visually-hidden"> email</span></a>
-            </dd>
-          </div>
-        </dl>
-
-      </form>
-
-    </div>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Name</dt>
+          <dd class="govuk-summary-list__value">
+            {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="name"
+              >Change<span class="govuk-visually-hidden"> name</span></a
+            >
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Date of birth</dt>
+          <dd class="govuk-summary-list__value">
+            {{data['dobDay']}} {{ data['dobMonth'] | displayMonth}}
+            {{data['dobYear']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="dob"
+              >Change<span class="govuk-visually-hidden">
+                date of birth</span
+              ></a
+            >
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Address</dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br />London<br />SE23 6FH
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="address-lookup.html"
+              >Change<span class="govuk-visually-hidden"> address</span></a
+            >
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Email</dt>
+          <dd class="govuk-summary-list__value">{{data['email']}}</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="email-address"
+              >Change<span class="govuk-visually-hidden"> email</span></a
+            >
+          </dd>
+        </div>
+      </dl>
+    </form>
   </div>
+</div>
 
 {% endblock %}
