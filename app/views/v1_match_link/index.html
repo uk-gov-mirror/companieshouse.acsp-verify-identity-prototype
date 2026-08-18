@@ -9,13 +9,10 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    
     <h1 class="govuk-heading-l">
       {{ serviceName}}
       <span class="govuk-caption-xl">Matching+ linking Version 1</span>
     </h1>
-
-    
 
     {{ govukButton({
       text: "ACSP - verifying a person's identity",
@@ -29,23 +26,15 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
       iconFallbackText: "Warning"
     }) }}
 
-
-
     <h2 class="govuk-heading-m">Entry points </h2>
     
-
     <!-- Verify someone identity shortcuts -->
-
     <ul class="govuk-list govuk-list--bullet">
       <li>
-        <a class="govuk-list" href="guidance">Companies House identity verification standard</a> <strong class="govuk-tag govuk-tag">
-          Not for development
-        </strong>
+        <a class="govuk-list" href="guidance">Companies House identity verification standard</a>
       </li>
       <li>
-        <a class="govuk-list" href="guidance-ACSPs">Guidance</a> <strong class="govuk-tag govuk-tag">
-          Not for development
-        </strong>
+        <a class="govuk-list" href="guidance-ACSPs">Guidance</a>
       </li>
       <li>
         <a class="govuk-list" href="https://find-update-company-info.herokuapp.com/authorised-agent/email-acsp-registration-accepted-release-1">Email - Authorised agent registration has been accepted</a>
@@ -53,146 +42,91 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
       <li>
         <a class="govuk-list" href="">Sign in to Companies House</a>
       </li>
- <!--      <li>
-        <a class="govuk-link" href="https://find-update-company-info.herokuapp.com/authorised-agent/acsp-home-super-admin">Authorised agent account </a>
-      </li> -->
-  </ul>
+    </ul>
 
-<h2 class="govuk-heading-m" id="earlyScreens">Start page</h2>
+    <h2 class="govuk-heading-m" id="earlyScreens">Start page</h2>
 
     <ul class="govuk-list govuk-list--bullet">
-    <li>
-      <a class="govuk-link" href="start-page">Tell Companies House you have verified someone’s identity</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
-    </li>
-  </ul>
+      <li>
+        <a class="govuk-link" href="start-page">Tell Companies House you have verified someone’s identity</a>
+      </li>
+    </ul>
 
-  <h2 class="govuk-heading-m" id="userRole">Individual's details</h2>
-  <ul class="govuk-list govuk-list--bullet">
-
-    <li>
-      <a class="govuk-list" href="name">Name</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong>
-    </li>
-
-    <li>
-      <a class="govuk-list" href="name-on-register">Name to be used in the identity verification statement</a> <strong class="govuk-tag govuk-tag--blue">
-        Content TBC
-       </strong>
-    </li>
-
-    <li>
-      <a class="govuk-list" href="name-for-the-register">Name for the identity verification statement</a> <strong class="govuk-tag govuk-tag--pink">
-       Dev ready
-       </strong>
-    </li>
-
-    <li>
-      <a class="govuk-list" href="personal-code">Personal code</a> <strong class="govuk-tag govuk-tag--pink">
-       Dev ready
-       </strong>
-    </li>
-
-
-    <li>
-      <a class="govuk-list" href="email-address">Email address</a> <strong class="govuk-tag govuk-tag--pink">
-       Dev ready
-       </strong>
-    </li>
-
-    <li>
-      <a class="govuk-list" href="email-stop-screen">Email address already in use - stop screen</a> <strong class="govuk-tag govuk-tag--pink">
-       Dev ready
-       </strong>
-    </li>
-   
-    <li>
-      <a class="govuk-list" href="dob"> Date of birth</a> <strong class="govuk-tag govuk-tag--pink">
-       Dev ready
-       </strong>
-    </li>
-    <li>
-      <a class="govuk-list" href="address-lookup">Where do they live?</a>  <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong>
-    </li>
-    <li>
-      <a class="govuk-list" href="address-list">Choose an address</a>  <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
-    </li>
-    <li>
-      <a class="govuk-list" href="address-confirm">Confirm their home address</a>  <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong>
-    </li>
-
-
+    <h2 class="govuk-heading-m" id="userRole">Individual's details</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="name">Name</a> 
+      </li>
+      <li>
+        <a class="govuk-list" href="name-on-register">Name to be used in the identity verification statement</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="name-for-the-register">Name for the identity verification statement</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="personal-code">Personal code</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="email-address">Email address</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="email-stop-screen">Email address already in use - stop screen</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="dob"> Date of birth</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="address-lookup">Where do they live?</a>  
+      </li>
+      <li>
+        <a class="govuk-list" href="address-list">Choose an address</a>   
+      </li>
+      <li>
+        <a class="govuk-list" href="address-confirm">Confirm their home address</a>  
+      </li>
     </ul>
 
 
   <h2 class="govuk-heading-m" id="userRole">Documents checked</h2>
   <ul class="govuk-list govuk-list--bullet">
-
-
     <li>
-      <a class="govuk-list" href="date-identity-checks">Date identity checks carried out</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
+      <a class="govuk-list" href="date-identity-checks">Date identity checks carried out</a>  
     </li>
 
     <li>
-      <a class="govuk-list" href="format-of-the-documents-checked">Did you check the security features of the document(s)?</a> <strong class="govuk-tag govuk-tag">
-       Content TBC
-      </strong>
+      <a class="govuk-list" href="format-of-the-documents-checked">Did you check the security features of the document(s)?</a>
     </li>
 
     <li>
-      <a class="govuk-list" href="documents-checked-r1">Route 1 - Which identity documents did you check to prove their identity?</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
+      <a class="govuk-list" href="documents-checked-r1">Route 1 - Which identity documents did you check to prove their identity?</a>  
     </li>
 
     <li>
-      <a class="govuk-list" href="documents-checked-r2">Route 2 - Which identity documents did you check to prove their identity?</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
+      <a class="govuk-list" href="documents-checked-r2">Route 2 - Which identity documents did you check to prove their identity?</a>  
     </li>
 
     <li>
-      <a class="govuk-list" href="id-document-details">Enter the details exactly as they appear on the document</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
+      <a class="govuk-list" href="id-document-details">Enter the details exactly as they appear on the document</a>  
     </li>
 
-</ul>
+  </ul>
+
   <h2 class="govuk-heading-m" id="userRole">Declaration</h2>
-  <ul class="govuk-list govuk-list--bullet">
 
+  <ul class="govuk-list govuk-list--bullet">
     <li>
-      <a class="govuk-list" href="id-check">Identity verification declaration</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
+      <a class="govuk-list" href="id-check">Identity verification declaration</a>  
     </li>
   </ul>
- 
-
-
 
   <h2 class="govuk-heading-m"id="finalScreens">Final screens</h2>
     <ul class="govuk-list govuk-list--bullet">
       <li>
-        <a class="govuk-list" href="check-your-answers">Check your answers before sending your application</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
+        <a class="govuk-list" href="check-your-answers">Check your answers before sending your application</a>  
       </li>
       <li>
         <a class="govuk-list" href="confirmation"> Confirmation</a>
-      </li>  <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
+      </li>   
     </ul>
 
 
@@ -209,14 +143,10 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
 
     <ul class="govuk-list govuk-list--bullet">
       <li>
-        <a class="govuk-list" href="stop-browser-back">User selects the browser back button</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
+        <a class="govuk-list" href="stop-browser-back">User selects the browser back button</a>  
       </li>
       <li>
-        <a class="govuk-list" href="stop-agent-suspended">Authorised agent suspended</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
+        <a class="govuk-list" href="stop-agent-suspended">Authorised agent suspended</a>  
       </li>
     </ul>
 
@@ -227,14 +157,10 @@ Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
   <h2 class="govuk-heading-m"id="finalScreens">Emails</h2>
     <ul class="govuk-list govuk-list--bullet">
       <li>
-        <a class="govuk-list" href="email-confirmation-to-ACSP">Email sent to the Authorised agent</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
+        <a class="govuk-list" href="email-confirmation-to-ACSP">Email sent to the Authorised agent</a>  
       </li>
       <li>
-        <a class="govuk-list" href="email-confirmation-to-individual">Email sent to the individual verified</a> <strong class="govuk-tag govuk-tag--pink">
-        Dev ready
-       </strong> 
+        <a class="govuk-list" href="email-confirmation-to-individual">Email sent to the individual verified</a>  
       </li> 
     </ul>
 
