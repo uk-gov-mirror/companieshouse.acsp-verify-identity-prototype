@@ -9,32 +9,25 @@ content %}
         <h1 class="govuk-fieldset__heading">Confirm their email address</h1>
       </legend>
 
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Email</dt>
-          <dd class="govuk-summary-list__value">{{data['email']}}</dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#"
-              >Change<span class="govuk-visually-hidden"> name</span></a
-            >
-          </dd>
-        </div>
-      </dl>
+      <p>Email address: <strong>james@jamesaccounting.com</strong></p>
 
-      <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-visually-hidden">Warning</span>
-
-          Make sure you’ve entered your client’s email correctly. They will not
-          receive their personal code if this is incorrect.
-        </strong>
-      </div>
-      <p>
-        If you notice a mistake after you’ve submitted their information, you
-        will have to use our corrections service to make changes to their
-        record.
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Change</a>
       </p>
+
+      <div class="govuk-inset-text">
+        <p><strong>
+          Make sure you’ve entered your client’s email correctly. They will not receive their personal code if this is incorrect.
+        </strong></h2>
+    
+
+        <p>
+          If you notice a mistake after you’ve submitted their information, you
+          will have to use our corrections service to make changes to their
+          record.
+        </p>
+      </div>
+
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
