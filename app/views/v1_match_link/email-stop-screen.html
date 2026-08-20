@@ -9,41 +9,34 @@ You need to provide a different email address – {{ serviceName }} – GOV.UK P
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="personal-code" method="post">
-
-
-
         <h1 class="govuk-heading-l">This email is already in use</h1>
 
-       
-
-  
-      
-
-  
         <p>We already have an identity record linked to <strong>example@emailaddress.com</strong> which doesn’t match the details you’ve entered for James Morris. </p>
 
-       <p> This could be for one of the following reasons: </p>
-       <ul class="govuk-list govuk-list--bullet">
-        <li>an authorised agent already provided this email address when they verified someone’s identity</li>
-        <li>someone has used this email address to verify their identity using GOV.UK One Login</li>
+        <p> This could be for one of the following reasons: </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>an authorised agent already provided this email address when they verified someone’s identity</li>
+          <li>someone has used this email address to verify their identity using GOV.UK One Login</li>
         </ul>
 
+        <p class="govuk-body">
+          Check with your client if they have provided the correct email address. You'll need to provide a unique email address for
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}</a>.
+        </p>
 
-
-        <p class="govuk-body">Check with your client if they have provided the correct email address. You'll need to <a href="email-address">provide a unique email address for
-
-          {% if (data['firstName'] == "") and (data['lastName'] == "") %}
-
-           James Morris{% else %}
-  
-          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}{% endif %}</a>.</p>
-
-          
-          
-
-      
-
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['email']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+            </dd>
+          </div>
+        </dl>
 
 
     </div>

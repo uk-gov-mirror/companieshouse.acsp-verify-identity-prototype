@@ -12,10 +12,7 @@ Hannah Salt's email address – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="email-address" method="post">
-
-
-      <fieldset class="govuk-fieldset"> 
+      <form action="email-address-confirm" method="post">
           
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l"> 
           <h1 class="govuk-fieldset__heading"> Confirm their email address</h1>
@@ -49,19 +46,19 @@ Hannah Salt's email address – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
-                <label class="govuk-label govuk-checkboxes__label" for="nationality">I confirm I have entered the correct email address for {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}.
+                <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                  I confirm I have entered the correct email address for {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}.
                 </label>
-            
+              </div>
             </div>
           </fieldset>
         </div>
-      </form>
-     
-      {{ govukButton({
-         text: "Confirm and continue",
-         href:"dob"
-       }) }}
+      
+        {{ govukButton({
+          text: "Confirm and continue"
+        }) }}
 
+       </form>
     </div>
   </div>
 
