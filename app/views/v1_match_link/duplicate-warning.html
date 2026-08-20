@@ -9,18 +9,31 @@ address – {{ serviceName }} – GOV.UK {% endblock %} {% block content %}
       </h1>
 
       <p>
-        We already have an identity record which matches the details you’ve
-        entered.
+        We already have an identity record which matches some of the details
+        you’ve entered.
       </p>
 
       <p>
         Check with your client if they have verified already using another ACSP
-        or GOV.UK One Login.
+        or GOV.UK One Login. If they have an existing identity record and need
+        to update their email address, you can
+        <a
+          href="https://submit.forms.service.gov.uk/form/8629/correct-someone-s-identity-verification-details/GiD648pc"
+          class="govuk-link govuk-link--no-visited-state"
+          >correct their identity verification details</a
+        >.
       </p>
 
       <p>
-        If you think this is a mistake, check that you have entered all your
-        client’s details correctly.
+        An email address can only be used once to verify an identity. If
+        multiple people use the same email address as your client, they’ll need
+        to provide you with a different email address for their identity
+        verification.
+      </p>
+
+      <p>
+        Before you continue, check that you have entered all your client’s
+        details correctly.
       </p>
 
       <dl class="govuk-summary-list">
@@ -63,7 +76,6 @@ address – {{ serviceName }} – GOV.UK {% endblock %} {% block content %}
       </dl>
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>
-
     </form>
   </div>
 </div>
