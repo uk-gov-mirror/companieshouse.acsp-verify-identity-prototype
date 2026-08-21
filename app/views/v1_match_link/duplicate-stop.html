@@ -3,6 +3,10 @@ address – {{ serviceName }} – GOV.UK {% endblock %} {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">
+      {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+    </span>
     <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
       Verification record already exists
     </h1>
@@ -29,9 +33,10 @@ address – {{ serviceName }} – GOV.UK {% endblock %} {% block content %}
           {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="name"
-            >Change<span class="govuk-visually-hidden"> name</span></a
-          >
+          <a class="govuk-link" href="name">
+            Change
+            <span class="govuk-visually-hidden">name</span>
+          </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -41,9 +46,10 @@ address – {{ serviceName }} – GOV.UK {% endblock %} {% block content %}
           {{data['dobYear']}}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="dob"
-            >Change<span class="govuk-visually-hidden"> date of birth</span></a
-          >
+          <a class="govuk-link" href="dob">
+            Change
+            <span class="govuk-visually-hidden">date of birth</span>
+          </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -52,18 +58,20 @@ address – {{ serviceName }} – GOV.UK {% endblock %} {% block content %}
           72 Guild Street<br />London<br />SE23 6FH
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="address-lookup.html"
-            >Change<span class="govuk-visually-hidden"> address</span></a
-          >
+          <a class="govuk-link" href="address-lookup.html">
+            Change
+            <span class="govuk-visually-hidden">address</span>
+          </a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Passport number</dt>
         <dd class="govuk-summary-list__value">12345678</dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="id-document-details.html"
-            >Change<span class="govuk-visually-hidden"> passportNumber</span></a
-          >
+          <a class="govuk-link" href="id-document-details.html">
+            Change
+            <span class="govuk-visually-hidden">passportNumber</span>
+          </a>
         </dd>
       </div>
     </dl>

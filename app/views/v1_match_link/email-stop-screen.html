@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-You need to provide a different email address – {{ serviceName }} – GOV.UK Prototype Kit
+This email is already in use – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -9,37 +9,37 @@ You need to provide a different email address – {{ serviceName }} – GOV.UK P
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">This email is already in use</h1>
+      <span class="govuk-caption-l">
+        {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+      </span>
+      <h1 class="govuk-heading-l">This email is already in use</h1>
 
-        <p>You cannot use <strong>example@emailaddress.com</strong>. </p>
+      <p>You cannot use <strong>example@emailaddress.com</strong>. </p>
 
-        <p> This could be for one of the following reasons: </p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>an authorised agent already provided this email address when they verified someone’s identity</li>
-          <li>someone has used this email address to verify their identity using GOV.UK One Login</li>
-        </ul>
+      <p> This could be for one of the following reasons: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>an authorised agent already provided this email address when they verified someone’s identity</li>
+        <li>someone has used this email address to verify their identity using GOV.UK One Login</li>
+      </ul>
 
-        <p class="govuk-body">
-          Check with your client if they have provided the correct email address. You'll need to provide a unique email address for
-          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}</a>.
-        </p>
+      <p class="govuk-body">
+        Check with your client if they have provided the correct email address. You'll need to provide a unique email address for
+        {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}</a>.
+      </p>
 
-          
-
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Email
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['email']}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-            </dd>
-          </div>
-        </dl>
-
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['email']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="email-address">Change<span class="govuk-visually-hidden"> email</span></a>
+          </dd>
+        </div>
+      </dl>
 
     </div>
   </div>

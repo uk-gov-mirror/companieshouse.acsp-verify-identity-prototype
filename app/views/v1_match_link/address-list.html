@@ -12,6 +12,10 @@ Choose an address – {{ serviceName }} – GOV.UK Prototype Kit
 
       <form class="form" action="address-list" method="post">
 
+        <span class="govuk-caption-l">
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+        </span>
+
         {{ govukRadios({
           idPrefix: "address-service-list",
           name: "address-service-list",
@@ -73,11 +77,6 @@ Choose an address – {{ serviceName }} – GOV.UK Prototype Kit
           text: "Confirm and continue",
           href:"address-confirm"
         }) }}
-
-
-
-
-  
 
       </form>
 

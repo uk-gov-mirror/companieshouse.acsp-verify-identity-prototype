@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype Kit
+Which documents did you check? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -17,17 +17,10 @@ What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype
           {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
         </span> 
       
-
         <h1 class="govuk-heading-l">Which documents did you check to verify their identity?</h1>
-                  <p class="govuk-hint">Select at least 2 documents. At least 1 of the documents must be from group A.  
-                  </p>
+        <p class="govuk-hint">Select at least 2 documents. At least 1 of the documents must be from group A.</p>
 
-
-  <!-- Is an irish passport card crypographic? -->
-
-
-        
-
+          <!-- Is an irish passport card crypographic? -->
 
           {{ govukCheckboxes({
             name: "group-a",
@@ -244,11 +237,6 @@ What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype
  
             ]
           }) }}
-
-
-
-
-
 
           {{ govukButton({
             text: "Continue"
