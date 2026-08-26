@@ -1,14 +1,10 @@
-{% extends "layouts/main.html" %} 
-{% block pageTitle %} 
-  Verification record might already exist – {{ serviceName }} – GOV.UK 
-{% endblock %} 
-
-{% block content %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Verification record
+might already exist – {{ serviceName }} – GOV.UK {% endblock %} {% block content
+%}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="duplicate-warning" method="post">
-
       <span class="govuk-caption-l">
         {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
       </span>
@@ -20,17 +16,15 @@
         We already have an identity record that matches some of the details
         you’ve entered.
       </p>
-      <h2 class="govuk-heading-m">Check if your client has already verified</h2>
+      <h2 class="govuk-heading-m">
+        1. Check if your client has already verified
+      </h2>
       <p>
         Check with your client if they have verified already using another ACSP
-        or GOV.UK One Login. If they have an existing identity record and need
-        to update their email address, you can
-        <a href="https://submit.forms.service.gov.uk/form/8629/correct-someone-s-identity-verification-details/GiD648pc" class="govuk-link govuk-link--no-visited-state">
-          correct their identity verification details
-        </a>.
+        or GOV.UK One Login.
       </p>
 
-      <h2 class="govuk-heading-m">Check the details you've provided</h2>
+      <h2 class="govuk-heading-m">2. Check the details you've provided</h2>
       <p>
         Before you continue, check that you have entered all your client’s
         details correctly.
@@ -57,6 +51,20 @@
           </dd>
         </div>
       </dl>
+
+      <h2 class="govuk-heading-m">
+        3. Confirm you've checked this isn't an existing record
+      </h2>
+      <p>
+        Once you've checked that your client hasn't verified already, and that
+        the details you've provided are correct, you can continue and add their
+        identity documents details.
+      </p>
+
+      <p>
+        You'll be stopped from submitting your client’s identity verification if
+        these details match an existing identity record.
+      </p>
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>
     </form>

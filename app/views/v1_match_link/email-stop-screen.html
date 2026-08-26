@@ -20,10 +20,11 @@ This email is already in use – {{ serviceName }} – GOV.UK Prototype Kit
       <ul class="govuk-list govuk-list--bullet">
         <li>an authorised agent already provided this email address when they verified someone’s identity</li>
         <li>someone has used this email address to verify their identity using GOV.UK One Login</li>
+        <li>your client has already verified using another ACSP or GOV.UK One Login</li>
       </ul>
-
-      <p class="govuk-body">
-        Check with your client if they have provided the correct email address. You'll need to provide a unique email address for
+       <h2 class="govuk-heading-m">Check if the email address is shared</h2>
+      <p>
+        Check with your client if they have provided the correct email address. If multiple people use the same email address, you'll need to provide a unique email address for
         {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}</a>.
       </p>
 
