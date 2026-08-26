@@ -42,11 +42,6 @@
           <dd class="govuk-summary-list__value">
             {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="name">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Date of birth</dt>
@@ -54,30 +49,15 @@
             {{data['dobDay']}} {{ data['dobMonth'] | displayMonth}}
             {{data['dobYear']}}
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="dob">
-              Change<span class="govuk-visually-hidden">date of birth</span>
-            </a>
-          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">Address</dt>
           <dd class="govuk-summary-list__value">
             72 Guild Street<br />London<br />SE23 6FH
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="address-lookup.html">
-              Change<span class="govuk-visually-hidden"> address</span>
-            </a>
-          </dd>
         </div>
       </dl>
-      <h2 class="govuk-heading-m">Check if the email address is shared</h2>
-      <p>
-        An email address can only be used once to verify an identity. If
-        multiple people use the same email address, your client will need to
-        provide a unique email address for their identity verification.
-      </p>
+
       <button class="govuk-button" data-module="govuk-button">Continue</button>
     </form>
   </div>

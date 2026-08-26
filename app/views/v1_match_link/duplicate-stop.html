@@ -32,12 +32,6 @@ address – {{ serviceName }} – GOV.UK {% endblock %} {% block content %}
         <dd class="govuk-summary-list__value">
           {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="name">
-            Change
-            <span class="govuk-visually-hidden">name</span>
-          </a>
-        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Date of birth</dt>
@@ -45,34 +39,16 @@ address – {{ serviceName }} – GOV.UK {% endblock %} {% block content %}
           {{data['dobDay']}} {{ data['dobMonth'] | displayMonth}}
           {{data['dobYear']}}
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="dob">
-            Change
-            <span class="govuk-visually-hidden">date of birth</span>
-          </a>
-        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Address</dt>
         <dd class="govuk-summary-list__value">
           72 Guild Street<br />London<br />SE23 6FH
         </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="address-lookup.html">
-            Change
-            <span class="govuk-visually-hidden">address</span>
-          </a>
-        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Passport number</dt>
         <dd class="govuk-summary-list__value">12345678</dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="id-document-details.html">
-            Change
-            <span class="govuk-visually-hidden">passportNumber</span>
-          </a>
-        </dd>
       </div>
     </dl>
   </div>

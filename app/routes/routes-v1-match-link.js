@@ -23,11 +23,49 @@ router.use((req, res, next) => {
 /*
  * Start page
  */
-router.post('/v1_match_link/start-page', function (req, res) {
+router.post('/v1_match_link/scenario', function (req, res) {
 
-    res.redirect('name')
+    res.redirect('start-page')
     
 })
+
+
+/*
+ * Start page
+ */
+router.post('/v1_match_link/start-page', function (req, res) {
+
+    res.redirect('email-address')
+    
+})
+
+
+/*
+ * Email address
+ */
+router.post('/v1_match_link/email-address', function (req, res) {
+
+    res.redirect('email-address-confirm')
+    
+})
+
+
+/*
+ * Email address confirm
+ */
+
+router.post('/v1_match_link/email-address-confirm', function (req, res) {
+
+
+    if (req.session.data['scenarios'] === 'dup_email') {
+        res.redirect('email-stop-screen')
+    } else {
+        res.redirect('name')
+    }  
+
+})
+
+
 
 /*
  * Public name, on the register
@@ -55,11 +93,7 @@ router.post('/v1_match_link/name-on-register', function (req, res) {
         res.redirect('name-for-the-register')
     
       }
-
-
-
-
-    
+ 
 })
 
 
@@ -120,38 +154,13 @@ router.post('/v1_match_link/address-lookup', function (req, res) {
  */
 router.post('/v1_match_link/address-confirm', function (req, res) {
 
-    res.redirect('email-address')
-    
-})
-
-
-/*
- * Email address
- */
-router.post('/v1_match_link/email-address', function (req, res) {
-
-    res.redirect('email-address-confirm')
-    
-})
-
-
-
-/*
- * Email address confirm
- */
-
-router.post('/v1_match_link/email-address-confirm', function (req, res) {
-
-    if (req.session.data['email'] === 'identityduplicate@server.com') {
+    if (req.session.data['scenarios'] === 'dup_identity' ||
+        req.session.data['scenarios'] === 'dup_identity_docs') {
         res.redirect('duplicate-warning')
-    } else 
-    if (req.session.data['email'] === 'emailduplicate@server.com') {
-        res.redirect('email-stop-screen')
     } else {
-    // go to the confirm address page
-        res.redirect('date-identity-checks')
+      res.redirect('date-identity-checks')
     }  
-
+    
 })
 
 
@@ -225,8 +234,11 @@ router.post('/v1_match_link/documents-checked-r2', function (req, res) {
  */
 router.post('/v1_match_link/id-document-details', function (req, res) {
 
-    res.redirect('id-check')
-    
+    if (req.session.data['scenarios'] === 'dup_identity_docs') {
+        res.redirect('duplicate-stop')
+    } else {
+        res.redirect('id-check')
+    }  
 })
 
 
@@ -236,11 +248,7 @@ router.post('/v1_match_link/id-document-details', function (req, res) {
  */
 router.post('/v1_match_link/id-check', function (req, res) {
 
-    if (req.session.data['email'] === 'identityduplicate@server.com') {
-        res.redirect('duplicate-stop')
-    } else {
-        res.redirect('check-your-answers')
-    }  
+    res.redirect('check-your-answers')
     
 })
 
