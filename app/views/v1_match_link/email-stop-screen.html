@@ -9,9 +9,6 @@ This email is already in use – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">
-        {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
-      </span>
       <h1 class="govuk-heading-l">This email is already in use</h1>
 
       <p>You cannot use <strong>example@emailaddress.com</strong>. </p>
@@ -24,8 +21,9 @@ This email is already in use – {{ serviceName }} – GOV.UK Prototype Kit
       </ul>
        <h2 class="govuk-heading-m">Check if the email address is shared</h2>
       <p>
-        Check with your client if they have provided the correct email address. If multiple people use the same email address, you'll need to provide a unique email address for
-        {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}</a>.
+        Check with your client if they have provided the correct email address. 
+        If multiple people use the same email address, you'll need to provide 
+        a unique email address for your client</a>.
       </p>
 
       <dl class="govuk-summary-list">
@@ -35,9 +33,6 @@ This email is already in use – {{ serviceName }} – GOV.UK Prototype Kit
           </dt>
           <dd class="govuk-summary-list__value">
             {{data['email']}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="email-address">Change<span class="govuk-visually-hidden"> email</span></a>
           </dd>
         </div>
       </dl>

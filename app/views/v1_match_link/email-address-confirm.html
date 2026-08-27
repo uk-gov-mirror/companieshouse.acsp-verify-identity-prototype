@@ -4,12 +4,9 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
     <form action="email-address-confirm" method="post">
 
-      <span class="govuk-caption-l">
-        {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
-      </span>
       <h1 class="govuk-heading-l">Confirm their email address</h1>
 
       <dl class="govuk-summary-list">
@@ -17,9 +14,7 @@
           <dt class="govuk-summary-list__key">Email</dt>
           <dd class="govuk-summary-list__value">{{data['email']}}</dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#"
-              >Change<span class="govuk-visually-hidden"> name</span></a
-            >
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
           </dd>
         </div>
       </dl>
@@ -28,9 +23,8 @@
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
-
-          Make sure you’ve entered your client’s email correctly. They will not
-          receive their personal code if this is incorrect.
+            Make sure you’ve entered your client’s email correctly. They will not
+            receive their personal code if this is incorrect.
         </strong>
       </div>
       <p>
@@ -39,24 +33,12 @@
         record.
       </p>
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+        <fieldset class="govuk-fieldset" aria-describedby="email-confirm-hint">
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input
-                class="govuk-checkboxes__input"
-                id="nationality"
-                name="nationality"
-                type="checkbox"
-                value="british"
-                aria-describedby="nationality-item-hint"
-              />
-              <label
-                class="govuk-label govuk-checkboxes__label"
-                for="nationality"
-              >
-                I confirm I have entered the correct email address for
-                {{data['firstName']}} {{data['middleName']}}
-                {{data['lastName']}}.
+              <input class="govuk-checkboxes__input" id="email-confirm" name="email-confirm" type="checkbox"/>
+              <label class="govuk-label govuk-checkboxes__label" for="email-confirm">
+                I confirm I have entered the correct email address.
               </label>
             </div>
           </div>

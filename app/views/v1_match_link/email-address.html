@@ -12,20 +12,16 @@ What is their email address? – {{ serviceName }} – GOV.UK Prototype Kit
 
       <form class="form" action="email-address" method="post">
 
-        <span class="govuk-caption-l">
-          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
-        </span>
         <h1 class="govuk-heading-l">What is their email address?</h1>
             
         <p class="govuk-body govuk-!-padding-top-2">
-          The email address you provide for {{data['firstName']}} {{data['middleName']}} {{data['lastName']}} 
-          can only be used once to verify someone’s identity. You will not be able to use it for anyone else 
+          The email address you provide can only be used once to verify someone’s identity. You will not be able to use it for anyone else 
           whose identity you have verified.
         </p>
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="email">
-            Enter {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}'s email address
+            Enter their email address
           </label>
           <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
         </div>
