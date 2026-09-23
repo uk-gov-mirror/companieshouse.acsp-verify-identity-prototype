@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+How were the identity documents checked? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">
+        {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+      </span>
+      <h1 class="govuk-heading-l">How were the identity documents checked?</h1>
+
+      <form class="form" action="format-of-the-documents-checked" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="security-check" name="security-check" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="security-check">
+                  Using technology to validate the cryptographic features of the document
+                </label>
+                <div class="govuk-hint govuk-radios__hint">
+                    Cryptographic features are security features that identify the person or organisation that issued the document.
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="security-check" name="security-check" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="security-check-2">
+                  By a person
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              The documents were checked another way
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>You must use one of the 2 options for checking identity documents from the <a href="guidance" rel="noreferrer noopener" target="_blank"><span class="govuk-visually-hidden">Companies House</span>identity verification standard (opens in a new tab)</a> to verify someone for Companies House.</p>
+            <p>If you used a commercial identity verification provider or platform to complete the checks for you, you must find out how they checked the person's documents. </p>
+          </div>
+        </details>
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

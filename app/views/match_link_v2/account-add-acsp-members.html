@@ -1,0 +1,139 @@
+{% extends "layouts/layout-account-signout-your-companies-jill.html" %}
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your companies
+{% endblock %}
+
+{% set serviceName %}
+ 
+{% endset %}
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+     <div class="govuk-grid-column-two-thirds">
+       <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
+          <h1 class="govuk-heading-l">Add a member</h1> 
+
+          {{ govukInput({
+            label: {
+              text: "Full name"
+            },
+            id: "full-name",
+            name: "full-name",
+            autocomplete: "name",
+            spellcheck: false
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Email address"
+            },
+            hint: {
+              text: "We'll send an email to tell them you've added them."
+            },
+            id: "email",
+            name: "email",
+            type: "email",
+            autocomplete: "email",
+            spellcheck: false
+          }) }}
+
+          {{ govukRadios({
+            name: "role",
+            fieldset: {
+              legend: {
+                text: "What is their role?",
+                classes: "govuk-fieldset__legend--m govuk-!-static-padding-top-3"
+              }
+            },
+            items: [
+              {
+                value: "super-admin",
+                text: "Manager",
+                hint: {
+                  text: "Can make changes to the authorised agent details, access services for authorised agents and manage its members."
+                }
+              },
+              {
+                value: "admin",
+                text: "Admin",
+                hint: {
+                  text: "Can access services for authorised agents and manage its members."
+                }
+              },
+              {
+                value: "standard-user",
+                text: "Standard user",
+                hint: {
+                  text: "Can access services for authorised agents."
+                }
+              }
+            ]
+          }) }}
+
+         <!--- <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What services can members access?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>Members of an authorised agent can:</p>
+          
+          <ul class="govuk-list govuk-list--bullet">
+            <li>form companies and registrable partnerships for clients </li>
+            <li>file on behalf of clients </li>
+            <li>verify someone’s identity </li>
+          </ul>
+            <p>They will only be able to add or remove other members if you add them as an admin. </p>
+            </div>
+          </details> -->
+
+
+          <!-- form companies and registrable partnerships for clients -->
+          {{ govukCheckboxes({
+            name: "service-access",
+            fieldset: {
+              legend: {
+                text: "What services do they need to use?",
+                classes: "govuk-fieldset__legend--m govuk-!-static-padding-top-3"
+              }
+            },
+            hint: {
+              text: "Select all that apply."
+            },
+            items: [
+              {
+                value: "filings",
+                text: "File on behalf of clients"
+              },
+              {
+                value: "farm",
+                text: "Verify someone’s identity"
+              }
+            ]
+          }) }}
+
+
+
+
+
+           {{ govukButton({
+              text: "Continue",
+              href:"account-add-check-acsp-members"
+            }) }}
+
+
+
+
+
+</div>
+</div>
+
+
+{% endblock %}

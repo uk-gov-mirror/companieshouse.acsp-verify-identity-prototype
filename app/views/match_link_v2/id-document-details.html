@@ -1,0 +1,158 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter the document details? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <form class="form" action="id-document-details" method="post">
+
+      <span class="govuk-caption-l">
+        {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+      </span>
+      <h1 class="govuk-heading-l">
+        Enter the details exactly as they appear on the document
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        Passport details
+      </h2>
+
+      {{ govukInput({
+        label: {
+          text: "Passport number"
+        },
+        hint: {
+          text: "This is a 9 characters long. It is usually shown in the top right hand corner of the photo page in the passport."
+        },
+        classes: "govuk-input--width-10",
+        id: "passport-number",
+        name: "passportNumber"
+      }) }}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend">
+            Expiry date
+          </legend>
+          <div id="passport-issued-hint" class="govuk-hint">
+            For example, 27 March 2035.
+          </div>
+      
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukInput({
+        label: {
+          text: "Country of issue"
+        },
+        hint: {
+          text: "This is usually shown on the first page of the passport."
+        },
+        id: "countryOfIssue",
+        name: "countryOfIssue",
+        classes: "govuk-!-width-two-thirds"
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        PRADO photographic ID details
+      </h2>
+
+      {{ govukInput({
+        label: {
+          text: "Document reference number (if it has one)"
+        },
+        hint: {
+          text: "This needs to be a unique reference or number that is shown on the document."
+        },
+        id: "prado-number",
+        name: "pradoNumber"
+      }) }}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="prado-issued-hint">
+          <legend class="govuk-fieldset__legend">
+            Expiry date (if it has one)
+          </legend>
+          <div id="prado-issued-hint" class="govuk-hint">
+            Enter an expiry date. For example, 27 March 2030.
+          </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <fieldset class="prado-country">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"> <label for="autocomplete-default" class="govuk-label ">Country of issue (if it has one)</label></h1> 
+
+          <p class="govuk-hint">Start typing a country, then choose from the list.</p>
+          <div id="pradoCountry" class="autocomplete-wrapper govuk-!-width-two-thirds"></div>
+        </div>
+      </fieldset>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/country.js"></script>
+
+{% endblock %}
+
+

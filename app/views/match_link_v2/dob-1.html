@@ -1,0 +1,159 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the director's name? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds-from-desktop">
+            <form class="form" action="dob" method="post">
+
+              <span class="govuk-caption-l">
+                {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+              </span>
+              <h1 class="govuk-heading-l">What is their date of birth?</h1>
+
+
+
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-visually-hidden">Warning</span>
+                  Entering the incorrect date of birth could cause filing rejections when using the personal code in future filings. 
+                </strong>
+              </div>
+             
+
+              
+              
+               <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+                <legend class="govuk-fieldset__legend">
+                  
+                  What is their date of birth?
+                  
+                </legend>
+                <div id="dob-hint" class="govuk-hint">
+                  For example, 27 April 1995. 
+                </div>
+
+            <!--    {{data['dob-day']}}   {{data['dob-month']}}  {{data['dob-year']}} -->
+
+                <div class="govuk-date-input" id="dob">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2"  id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                      <label class="govuk-label" for="dob-month">
+                        Month
+                      </label>
+                      <select class="govuk-select" id="dob-month" name="dob-month">
+                        <option value="" selected>Choose month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                      </select>
+                    </div>
+                    </div>
+
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="dob-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  </div>
+                </div>
+              </fieldset>  
+
+      
+  
+
+
+
+              
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+                <legend class="govuk-fieldset__legend">
+                  
+                  Confirm their date of birth
+                  
+                </legend>
+                <div id="dob-hint" class="govuk-hint">
+                  For example, 27 April 1995. 
+                </div>
+
+            <!--    {{data['dob-day']}}   {{data['dob-month']}}  {{data['dob-year']}} -->
+
+                <div class="govuk-date-input" id="dob">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="dob-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2"  id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                      <label class="govuk-label" for="dob-month">
+                        Month
+                      </label>
+                      <select class="govuk-select" id="dob-month" name="dob-month">
+                        <option value="" selected>Choose month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                      </select>
+                    </div>
+                    </div>
+
+
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="dob-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  </div>
+                </div>
+              </fieldset>  
+
+   
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

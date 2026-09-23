@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the director's name? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="personal-code" method="post">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Where we'll send their Companies House personal code</h1>
+
+
+       
+
+      
+
+        <p class="govuk-body govuk-!-padding-top-5">Once you've verified 
+          {% if (data['firstName'] == "") and (data['lastName'] == "") %}
+
+           Hannah Salt's
+  
+         
+          {% else %}
+  
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}'s
+  
+          {% endif %}
+  
+          
+         identity, we'll send their Companies House personal code to the email address you provide on the next page. </p>
+
+        <p>They'll need to use their personal code to confirm their identity has been verified. We'll let them know they can share the personal code with people they trust to file on their behalf.</p>
+          
+          
+
+        <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      When they'll need their personal code
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>They may need to provide their personal code for various reasons, including:</p>
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>as part of some company filings, such as the confirmation statement</li>
+                          <li>if they are appointed as a director</li>
+                          <li>if they become a person with significant control (PSC)</li>
+                          </ul>
+  </div>
+</details>
+      
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

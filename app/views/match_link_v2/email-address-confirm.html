@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %} 
+{% block pageTitle %} Confirm their email address – {{ serviceName }} – GOV.UK Prototype Kit {% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="email-address-confirm" method="post">
+
+      <h1 class="govuk-heading-l">Confirm their email address</h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Email</dt>
+          <dd class="govuk-summary-list__value">{{data['email']}}</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+            Make sure you’ve entered your client’s email correctly. They will not
+            receive their personal code if this is incorrect.
+        </strong>
+      </div>
+      <p>
+        If you notice a mistake after you’ve submitted their information, you
+        will have to use our corrections service to make changes to their
+        record.
+      </p>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="email-confirm-hint">
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="email-confirm" name="email-confirm" type="checkbox"/>
+              <label class="govuk-label govuk-checkboxes__label" for="email-confirm">
+                I confirm I have entered the correct email address.
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({ text: "Confirm and continue" }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

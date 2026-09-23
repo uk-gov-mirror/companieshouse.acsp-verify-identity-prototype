@@ -1,0 +1,210 @@
+{% extends "layouts/layout-account-signout-your-companies-jill.html" %}
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your companies
+{% endblock %}
+
+{% set serviceName %}
+ 
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+     <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
+          <h1 class="govuk-heading-l">Manage members</h1>
+
+           {{ govukButton({
+              text: "Add a new person",
+              href:"account-add-acsp-members"
+            }) }}
+
+
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters govuk-!-padding-top-3">
+      
+          
+              {{ govukSummaryList({
+                card: {
+                  title: {
+                    text: "James Morris"
+                  }
+                },
+                rows: [
+                {
+                  key: {
+                    text: "Role"
+                  },
+                  value: {
+                    html: "<strong class='govuk-tag govuk-tag--blue'>Manager</strong>"
+                  }
+                },
+                  {
+                    key: {
+                      text: "Email address"
+                    },
+                    value: {
+                      html: "james.morris@example.com"
+                    },
+                  
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Change email address"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Services they can access"
+                    },
+                    value: {
+                      html: "file on behalf of clients<br>verify someone’s identity"
+                    }
+                  
+                    
+                  }
+                ]
+              }) }}
+
+              {{ govukSummaryList({
+                card: {
+                  title: {
+                    text: "Kate Williams"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "account-remove-acsp-member",
+                        text: "Remove member",
+                        visuallyHiddenText: "of JAMES ACCOUNTING LTD"
+                      }
+                    ]
+                  }
+                },
+                rows: [
+                  {
+                    key: {
+                      text: "Role"
+                    },
+                    value: {
+                      html: "<strong class='govuk-tag govuk-tag--turquoise'>Standard user</strong>"
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Change role type"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Email"
+                    },
+                    value: {
+                      html: "k.williams@example.com"
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Change email address"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Services they can access"
+                    },
+                    value: {
+                      html: "file on behalf of clients<br>verify someone’s identity"
+                    },
+                  
+                    actions: {
+                      items: [
+                        {
+                          href: "#",
+                          text: "Change",
+                          visuallyHiddenText: "Change email address"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }) }}
+
+      
+            </div>
+            </div>
+
+           <!-- <div style=" border-color: #b1b4b6; border-style: solid; border-width: 1px; padding: 2em;">
+                  
+                   <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                    <table class="govuk-table">
+                      <thead class="govuk-table__head">
+
+                        <tr class="govuk-table__row">
+                          <th class="govuk-table__header" scope="col"> People digitally authorised <br> to file online for this ACSP</th>
+                          <th class="govuk-table__header" scope="col"> Email address </th>
+                          <th class="govuk-table__header" scope="col"> Role </th>
+                          <th class="govuk-table__header" scope="col"> Authorisation <br>status </th>
+                          <th class="govuk-table__header" scope="col"> View </th>
+                        </tr>
+
+
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell">
+                            <p class="govuk-body"> John Morris</p>
+                          </td>
+                          <td class="govuk-table__cell">
+                            <p class="govuk-body"> j.morris@example.com</p>
+                          </td>
+                          <td class="govuk-table__cell">
+                            <p class="govuk-body"> Admin</p>
+                          </td>
+                          <td class="govuk-table__cell">
+                            {{govukTag({
+                              text: "CONFIRMED",
+                              classes: "govuk-tag--turquoise"
+                            })}}
+                          </td>
+                          <td class="govuk-table__cell">
+                  <a href="../user-account/authorised-person-hannah" class="govuk-link">View details</a>
+                        </tr>
+                
+                      </tbody>
+                    </table> 
+                   
+                  </div> 
+
+                </div>-->
+
+              </div>
+            </div>
+
+
+
+   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+</div>
+</div>
+
+
+{% endblock %}

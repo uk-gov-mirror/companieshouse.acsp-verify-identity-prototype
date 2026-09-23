@@ -1,0 +1,153 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What is the ACSPs registered address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="keep-records" method="post">
+
+        <span class="govuk-caption-l">
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+        </span> 
+        
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        <h1 class="govuk-heading-l">Which documents did you check to verify their identity?</h1>
+
+          {{ govukCheckboxes({
+            name: "documents-checked-name",
+            fieldset: {
+              legend: {
+                text: "Proof of name documents",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "Select all that apply."
+            },
+            items: [
+              {
+                value: "",
+                text: "Current signed passport"
+              },
+              {
+                value: "",
+                text: "Original birth certificate",
+                hint: {
+                  text: "This is a UK birth certificate that was issued within 12 months of the person’s date of birth. It includes certificates issued by UK authorities overseas, such as Embassies High Commissions and HM Forces."
+                }
+              },
+              {
+                value: "",
+                text: "EEA member state identity card",
+                hint: {
+                  text: "This can also be used as proof of address if the card shows this."
+                }
+              },
+              {
+                value: "",
+                text: "Current UK or EEA photocard driving licence"
+              },
+              {
+                value: "",
+                text: "Full paper driving licence"
+              },
+              {
+                value: "",
+                text: "Photographic registration cards for self-employed individuals in the construction industry - CIS4"
+              },
+              {
+                value: "",
+                text: "Benefit book or original notification letter from Benefits Agency"
+              },
+              {
+                value: "",
+                text: "Firearms or shotgun certificate"
+              },
+              {
+                value: "",
+                text: "Residence permit issued by the Home Office to EEA nationals on sight of own country passport"
+              },
+              {
+                value: "",
+                text: "National identity card bearing a photograph of the applicant"
+              }
+            ]
+          }) }}
+
+          {{ govukCheckboxes({
+            name: "documents-checked-address",
+            fieldset: {
+              legend: {
+                text: "Proof of address documents",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "Select all that apply."
+            },
+            items: [
+              {
+                value: "",
+                text: "Utility bill (gas, electric, satellite television, landline phone bill) issued within the last three months"
+              },
+              {
+                value: "",
+                text: "Local authority council tax bill for the current council tax year"
+              },
+              {
+                value: "",
+                text: "Current UK driving licence (only if it has not been used as proof of name)"
+              },
+              {
+                value: "",
+                text: "Bank, Building Society or Credit Union statement or passbook dated within the last three months"
+              },
+              {
+                value: "",
+                text: "Original mortgage statement from a recognised lender issued for the last full year"
+              },
+              {
+                value: "",
+                text: "Solicitors letter sent within the last three months confirming recent house purchase or land registry confirmation of address"
+              },
+              {
+                value: "",
+                text: "Council or housing association rent card or tenancy agreement for the current year"
+              },
+              {
+                value: "",
+                text: "Benefit book or original notification letter from Benefits Agency (only if it has not been used as proof of name)"
+              },
+              {
+                value: "",
+                text: "HMRC self-assessment letters or tax demand dated within the current financial year"
+              },
+              {
+                value: "",
+                text: "Electoral Register entry
+                or
+                NHS Medical card or letter of confirmation from GP’s practice of registration with the surgery"
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

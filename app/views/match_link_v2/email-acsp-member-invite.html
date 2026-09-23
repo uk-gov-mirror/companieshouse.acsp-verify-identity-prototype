@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Register an ACSP: application approved
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+   
+      <h1 class="govuk-heading-l">You have been added as a member of a Companies House authorised agent </h1>
+      
+      <p class="govuk-body">James Morris has added you as a member of JAMES ACCOUNTING LTD.</p>
+
+
+      <p class="govuk-body"><a href="sign-in-kate">Sign in or create a Companies House account</a> to: </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+  <li>form companies and registrable partnerships for clients
+  </li>
+  <li>file on behalf of clients
+  </li>
+  <li>verify someone's identity
+  </li>
+</ul>
+
+<!--<p class="govuk-body">If you do not sign in or create an account within 7 days, we will remove you from the authorised agent account.</p> -->
+      
+     <!-- <ol class="govuk-list govuk-list--number">
+        <li>Select the link in this email.</li>
+        <li>Sign in or create a Companies House account.</li>
+        <li>Accept or decline if you want to be a member of MORRIS ACCOUNTING LTD.</li>
+      </ol>
+
+      <h3 class="govuk-heading-s">Link to accept or decline being a member:</h2>
+      <p class="govuk-body"><a href="acsp-member-invite-confirm" class="govuk-link">https://companieshouse/jshdfjezhgfuysyshdbjshdjhvjhvjhvjhv</a>.</p>
+      
+
+      {{ govukInsetText({
+        text: "This link expires in 7 days. If you run out of time, you will need to ask to be added again.  "
+      }) }}
+
+      <p class="govuk-body">If you were not expecting this email...</p>
+
+     
+      <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="" class="govuk-link govuk-link--no-visited-state">quick survey</a>.</p> -->
+      <h2 class="govuk-heading-m">Contact us</h2>
+      <!--<p class="govuk-body">If you have a question, you can contact us.</p> -->
+      <h3 class="govuk-heading-s">Telephone</h3>
+      <ul class="govuk-list">
+        <li>0303 1234 500</li>
+        <li>Monday to Friday, 8:30am to 6pm</li>
+      </ul>
+      <p class="govuk-body">
+        <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+      </p>
+
+      <h3 class="govuk-heading-s">Email</h3>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/call-charges">enquiries@companieshouse.gov.uk</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+
+
+  </div>
+</div>
+{% endblock %}

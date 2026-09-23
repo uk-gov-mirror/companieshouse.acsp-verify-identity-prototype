@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Confirm their home
+address – {{ serviceName }} – GOV.UK {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">
+      {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+    </span>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+      Verification record already exists
+    </h1>
+
+    <p>
+      We already have an identity record that matches the details you’ve
+      entered. This could be for a number of reasons. Here are a few things you
+      can check.
+    </p>
+    <h2 class="govuk-heading-m">
+      1. Check if your client has already verified
+    </h2>
+    <p>
+      Check with your client if they have verified already using another ACSP or
+      GOV.UK One Login. You can direct them to our guidance on
+      <a href="https://www.gov.uk/guidance/companies-house-personal-codes-for-identity-verification#where-to-find-your-personal-code"
+        class="govuk-link govuk-link--no-visited-state">where to find your personal code</a>
+      if they don't have it.
+    </p>
+
+    <p>
+      If your client verified using another ACSP, they might not have connected
+      their verified identity to our records. They can do this by following our
+      step-by-step instructions on
+      <a href="https://www.gov.uk/guidance/companies-house-personal-codes-for-identity-verification#how-to-save-your-personal-code-to-a-companies-house-account"
+        class="govuk-link govuk-link--no-visited-state">how to save your personal code to a Companies House account</a>.
+    </p>
+    <h2 class="govuk-heading-m">2. Check the details you've provided</h2>
+    <p>
+      If you've confirmed that your client hasn't verified already, check that
+      you have entered all their details correctly.
+    </p>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">
+          {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Date of birth</dt>
+        <dd class="govuk-summary-list__value">
+          {{data['dobDay']}} {{ data['dobMonth'] | displayMonth}}
+          {{data['dobYear']}}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Address</dt>
+        <dd class="govuk-summary-list__value">
+          72 Guild Street<br />London<br />SE23 6FH
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Passport number</dt>
+        <dd class="govuk-summary-list__value">12345678</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<h2 class="govuk-heading-m">3. Contact Companies House</h2>
+<p>
+  If you think there has been a mistake, and you have concerns about someone
+  else using your client’s details to verify their identity, you can
+  <a href="https://www.gov.uk/find-contact-details-companies-house"
+    class="govuk-link govuk-link--no-visited-state">contact Companies House</a>.
+</p>
+
+{% endblock %}

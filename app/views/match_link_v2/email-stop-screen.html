@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+This email is already in use – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">This email is already in use</h1>
+
+      <p>You cannot use <strong>example@emailaddress.com</strong>. </p>
+
+      <p> This could be for one of the following reasons: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>an authorised agent already provided this email address when they verified someone’s identity</li>
+        <li>someone has used this email address to verify their identity using GOV.UK One Login</li>
+        <li>your client has already verified using another ACSP or GOV.UK One Login</li>
+      </ul>
+       <h2 class="govuk-heading-m">Check if the email address is shared</h2>
+      <p>
+        Check with your client if they have provided the correct email address. 
+        If multiple people use the same email address, you'll need to provide 
+        a unique email address for your client</a>.
+      </p>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['email']}}
+          </dd>
+        </div>
+      </dl>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

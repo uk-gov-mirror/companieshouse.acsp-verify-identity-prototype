@@ -1,0 +1,108 @@
+{% extends "layouts/layout-account-signout-your-companies-jill.html" %}
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your companies
+{% endblock %}
+
+{% set serviceName %}
+ 
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+     <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
+          <h1 class="govuk-heading-l">Members</h1>
+
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters govuk-!-padding-top-3">
+      
+          
+              {{ govukSummaryList({
+                card: {
+                  title: {
+                    text: "James Morris"
+                  }
+                },
+                rows: [
+                {
+                  key: {
+                    text: "Role"
+                  },
+                  value: {
+                    html: "<strong class='govuk-tag govuk-tag--blue'>Admin</strong>"
+                  }
+                },
+                  {
+                    key: {
+                      text: "Email address"
+                    },
+                    value: {
+                      html: "james.morris@example.com"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Services they can access"
+                    },
+                    value: {
+                      html: "file on behalf of clients<br>verify someone’s identity"
+                    }
+                  
+                  }
+                ]
+              }) }}
+
+              {{ govukSummaryList({
+                card: {
+                  title: {
+                    text: "Kate Williams"
+                  }
+                },
+                rows: [
+                  {
+                    key: {
+                      text: "Role"
+                    },
+                    value: {
+                      html: "<strong class='govuk-tag govuk-tag--turquoise'>Standard user</strong>"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Email"
+                    },
+                    value: {
+                      html: "k.williams@example.com"
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Services they can access"
+                    },
+                    value: {
+                      html: "file on behalf of clients<br>verify someone’s identity"
+                    }
+                  
+                  }
+                ]
+              }) }}
+
+      
+            </div>
+          </div>
+
+   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  </div>
+  </div>
+</div>
+
+
+{% endblock %}

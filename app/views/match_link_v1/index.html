@@ -1,0 +1,225 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Shortcuts – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{ serviceName}}
+      <span class="govuk-caption-xl">Matching+ linking Version 1</span>
+    </h1>
+
+    {{ govukButton({
+      text: "ACSP - verifying a person's identity",
+      classes: "govuk-button--secondary",
+      href:"scenario"
+    }) }}
+
+
+    {{ govukWarningText({
+      text: "This prototype is being actively worked on - things might break or change very quickly",
+      iconFallbackText: "Warning"
+    }) }}
+
+    <h2 class="govuk-heading-m">Entry points </h2>
+    
+    <!-- Verify someone identity shortcuts -->
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="guidance">Companies House identity verification standard</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="guidance-ACSPs">Guidance</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="https://find-update-company-info.herokuapp.com/authorised-agent/email-acsp-registration-accepted-release-1">Email - Authorised agent registration has been accepted</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="">Sign in to Companies House</a>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m" id="earlyScreens">Start page</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="start-page">Tell Companies House you have verified someone’s identity</a>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m" id="userRole">Individual's details</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="name">Name</a> 
+      </li>
+      <li>
+        <a class="govuk-list" href="name-on-register">Name to be used in the identity verification statement</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="name-for-the-register">Name for the identity verification statement</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="personal-code">Personal code</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="dob"> Date of birth</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="address-lookup">Where do they live?</a>  
+      </li>
+      <li>
+        <a class="govuk-list" href="address-list">Choose an address</a>   
+      </li>
+      <li>
+        <a class="govuk-list" href="address-confirm">Confirm their home address</a>  
+      </li>
+      <li>
+        <a class="govuk-list" href="email-address">What is their email address</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="email-address-confirm">Confirm email address</a>
+      </li>
+      <li>
+        <a class="govuk-list" href="email-stop-screen">Email address already in use - stop screen</a>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m" id="matchWarning">Matching warning</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="duplicate-warning">The information provided looks like a duplicated record</a>
+      </li>
+    </ul>
+
+
+    <h2 class="govuk-heading-m" id="userRole">Documents checked</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="date-identity-checks">Date identity checks carried out</a>  
+      </li>
+
+      <li>
+        <a class="govuk-list" href="format-of-the-documents-checked">Did you check the security features of the document(s)?</a>
+      </li>
+
+      <li>
+        <a class="govuk-list" href="documents-checked-r1">Route 1 - Which identity documents did you check to prove their identity?</a>  
+      </li>
+
+      <li>
+        <a class="govuk-list" href="documents-checked-r2">Route 2 - Which identity documents did you check to prove their identity?</a>  
+      </li>
+
+      <li>
+        <a class="govuk-list" href="id-document-details">Enter the details exactly as they appear on the document</a>  
+      </li>
+
+    </ul>
+
+    <h2 class="govuk-heading-m" id="userRole">Declaration</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="id-check">Identity verification declaration</a>  
+      </li>
+    </ul>
+
+   <h2 class="govuk-heading-m" id="matchWarning">Matching stop screen</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="duplicate-stop">Verification record already exists</a>
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m"id="finalScreens">Final screens</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="check-your-answers">Check your answers before sending your application</a>  
+      </li>
+      <li>
+        <a class="govuk-list" href="confirmation"> Confirmation</a>
+      </li>   
+    </ul>
+
+    <h2 class="govuk-heading-m"id="finalScreens">Annotations to the register</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="chs-annotation-people"> Person has been identity verified by an authorised agent </a> 
+      </li>
+      
+    </ul>
+
+    <h2 class="govuk-heading-m"id="finalScreens">Stop screens</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="stop-browser-back">User selects the browser back button</a>  
+      </li>
+      <li>
+        <a class="govuk-list" href="stop-agent-suspended">Authorised agent suspended</a>  
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m"id="finalScreens">Emails</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-list" href="email-confirmation-to-ACSP">Email sent to the Authorised agent</a>  
+      </li>
+      <li>
+        <a class="govuk-list" href="email-confirmation-to-individual">Email sent to the individual verified</a>  
+      </li> 
+    </ul>
+
+   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    <h2 class="govuk-heading-m" id="authScreens">Changes this version</h2>
+    <ul class="govuk-list govuk-list--bullet">      
+      <li>
+        New content on start page
+      </li>
+       <li>
+        Email stop screen content changed. New header added. New 'Check if email is shared' paragraph added
+      </li>
+       <li>
+        New duplicate_warning screen added. This will display if user matches on name, dob and address. Just a warning to user to double check.
+      </li>
+      <li>
+        New duplicate_stop screen added. This will display if user matches on name, dob, address and identity number. This is a hard stop. User cannot continue with these details.
+      </li>
+       <li>
+        Email to ACSP content changed to include information regarding corrections journey.
+      </li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    <h2 class="govuk-heading-m">User research</h2>
+    <ul class="govuk-list govuk-list--bullet">      
+      <li>
+        <a class="govuk-link" target="_blank" href="#">tbd</a>
+      </li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    <h2 class="govuk-heading-m">Journey flow</h2>
+    <p class="govuk-body"><a class="govuk-link" target="_blank" href="https://app.mural.co/t/companieshouse8589/m/companieshouse8589/1787123466235/816a9ae0cf1c7b92d7679665d82b922a9d6559ce">Flow diagrams</a></p>
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+

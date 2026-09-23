@@ -1,0 +1,44 @@
+{% extends "layouts/layout-account-signout-your-companies-jill.html" %}
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your companies
+{% endblock %}
+
+{% set serviceName %}
+ 
+{% endset %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
+     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">MORRIS ACCOUNTING LTD</span>
+      <h1 class="govuk-heading-l">Remove Kate Williams</h1>
+
+      <p class="govuk-body">If you remove Kate Williams, they will not be able to use authorised agent services for JAMES ACCOUNTING LTD. </p>
+
+      <p class="govuk-body">We’ll email Kate Williams to let them know you have removed them. </p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-button",
+          href:"account-remove-check-acsp-member"
+        }) }}
+      
+        {{ govukButton({
+          text: "Cancel",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+          
+
+     </div>
+</div>
+</div>
+
+
+{% endblock %}
